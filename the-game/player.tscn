@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c1tnxqkxhd1us"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_uvisj"]
-[ext_resource type="Texture2D" uid="uid://uj1nd0ri1k83" path="res://icon.svg" id="2_anxb7"]
+[ext_resource type="Texture2D" uid="uid://bmlxnsfx1g76d" path="res://Robot Side Profile Facing Left-Sheet.png" id="2_2n60d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ehbw5"]
 
@@ -12,5 +12,9 @@ script = ExtResource("1_uvisj")
 shape = SubResource("RectangleShape2D_ehbw5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.296875, 0.296875)
-texture = ExtResource("2_anxb7")
+texture = ExtResource("2_2n60d")
+region_enabled = true
+region_rect = Rect2(5.66648, 4.29046, 22.8148, 27.4568)
+
+[node name="Camera2D" type="Camera2D" parent="Sprite2D"]
+zoom = Vector2(6, 6)
