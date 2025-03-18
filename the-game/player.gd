@@ -1,8 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 50.0
-
+var SPEED = 50.0
 
 
 func _physics_process(delta: float) -> void:
@@ -30,3 +29,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+
+func _on_interact_with_pile() -> void:
+	SPEED += 100

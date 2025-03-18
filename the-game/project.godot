@@ -20,3 +20,12 @@ config/icon="res://icon.svg"
 window/size/viewport_width=320
 window/size/viewport_height=320
 window/stretch/scale=2.0
+
+[layer_names]
+
+2d_physics/layer_1="labels"
+2d_physics/layer_2="front sprites"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

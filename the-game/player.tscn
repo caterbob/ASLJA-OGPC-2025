@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bmlxnsfx1g76d" path="res://Robot Side Profile Facing Left-Sheet.png" id="2_2n60d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ehbw5"]
+size = Vector2(20, 26)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_uvisj")
