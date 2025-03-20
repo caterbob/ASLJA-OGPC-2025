@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://label.gd" id="6_2c0f0"]
 [ext_resource type="Script" path="res://static_body_2d.gd" id="6_7ev70"]
 [ext_resource type="Script" path="res://area_2d.gd" id="7_2qr23"]
+[ext_resource type="Texture2D" uid="uid://bi18cy8ggfynv" path="res://Scrap Pile.png" id="8_ovham"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8dxh4"]
 texture = ExtResource("1_8l18e")
@@ -805,8 +806,6 @@ sources/0 = SubResource("TileSetAtlasSource_8dxh4")
 sources/1 = SubResource("TileSetAtlasSource_ff6pj")
 sources/2 = SubResource("TileSetAtlasSource_o71v6")
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_rmagt"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pwxxb"]
 size = Vector2(35.5, 36)
 
@@ -839,9 +838,9 @@ script = ExtResource("6_7ev70")
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
 light_mask = 4
 visibility_layer = 4
-position = Vector2(123, 98)
-scale = Vector2(-34.9411, 36.0018)
-texture = SubResource("PlaceholderTexture2D_rmagt")
+position = Vector2(122, 99)
+scale = Vector2(-1.46607, 1.51058)
+texture = ExtResource("8_ovham")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(123, 98)
@@ -855,8 +854,8 @@ position = Vector2(122.5, 99)
 shape = SubResource("RectangleShape2D_8ef2b")
 
 [connection signal="area_shape_entered" from="StaticBody2D/PileOfParts" to="." method="on_area_shape_entered"]
-[connection signal="area_shape_entered" from="StaticBody2D/PileOfParts" to="Player/Label" method="_on_pile_of_parts_area_shape_entered"]
 [connection signal="area_shape_entered" from="StaticBody2D/PileOfParts" to="Player/Label" method="area_shape_entered"]
+[connection signal="area_shape_entered" from="StaticBody2D/PileOfParts" to="Player/Label" method="_on_pile_of_parts_area_shape_entered"]
 [connection signal="body_entered" from="StaticBody2D/PileOfParts" to="Player/Label" method="_on_pile_of_parts_body_entered"]
 [connection signal="body_entered" from="StaticBody2D/PileOfParts" to="StaticBody2D/PileOfParts" method="_on_body_entered"]
 [connection signal="body_exited" from="StaticBody2D/PileOfParts" to="Player/Label" method="_on_pile_of_parts_body_exited"]
