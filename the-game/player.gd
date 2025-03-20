@@ -1,8 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 50.0
-
+var SPEED = 50.0
 
 @onready var animation = $AnimatedSprite2D
 
@@ -49,3 +48,7 @@ func _physics_process(delta: float) -> void:
 		animation.stop()
 	
 	move_and_slide()
+
+
+func _on_interact_with_pile() -> void:
+	SPEED += 100

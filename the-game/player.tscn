@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cd3w6vc8advga" path="res://Robot Facing Backwards-Sheet.png" id="5_2o7pp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ehbw5"]
+size = Vector2(20, 26)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2inbp"]
 atlas = ExtResource("2_hjmid")

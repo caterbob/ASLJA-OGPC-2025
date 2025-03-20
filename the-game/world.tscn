@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bo8ih5mxcxcl"]
+[gd_scene load_steps=16 format=3 uid="uid://bo8ih5mxcxcl"]
 
 [ext_resource type="Texture2D" uid="uid://cu7k73nwbnjln" path="res://Sprite-0001-export.png" id="1_8l18e"]
 [ext_resource type="Script" path="res://world.gd" id="1_cl5hb"]
@@ -7,6 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://6p0h5v630pdd" path="res://Floor Tiles- Indoors.png" id="3_fll8y"]
 [ext_resource type="PackedScene" uid="uid://dsuniggkpqps6" path="res://hud.tscn" id="6_wxsfj"]
 [ext_resource type="Script" path="res://hud.gd" id="7_6rj1t"]
+[ext_resource type="Script" path="res://label.gd" id="6_2c0f0"]
+[ext_resource type="Script" path="res://static_body_2d.gd" id="6_7ev70"]
+[ext_resource type="Script" path="res://area_2d.gd" id="7_2qr23"]
+[ext_resource type="Texture2D" uid="uid://bi18cy8ggfynv" path="res://Scrap Pile.png" id="8_ovham"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8dxh4"]
 texture = ExtResource("1_8l18e")
@@ -804,6 +808,12 @@ sources/0 = SubResource("TileSetAtlasSource_8dxh4")
 sources/1 = SubResource("TileSetAtlasSource_ff6pj")
 sources/2 = SubResource("TileSetAtlasSource_o71v6")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pwxxb"]
+size = Vector2(35.5, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ef2b"]
+size = Vector2(53, 54)
+
 [node name="World" type="Node2D"]
 script = ExtResource("1_cl5hb")
 
@@ -817,3 +827,42 @@ position = Vector2(186, 156)
 
 [node name="HUD" parent="." instance=ExtResource("6_wxsfj")]
 script = ExtResource("7_6rj1t")
+[node name="Label" type="Label" parent="Player"]
+offset_left = -14.0
+offset_top = 12.0
+offset_right = 14.0
+offset_bottom = 33.0
+theme_override_font_sizes/font_size = 7
+text = "Interact"
+script = ExtResource("6_2c0f0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+script = ExtResource("6_7ev70")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(122, 99)
+scale = Vector2(-1.46607, 1.51058)
+texture = ExtResource("8_ovham")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(123, 98)
+shape = SubResource("RectangleShape2D_pwxxb")
+
+[node name="PileOfParts" type="Area2D" parent="StaticBody2D"]
+script = ExtResource("7_2qr23")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D/PileOfParts"]
+position = Vector2(122.5, 99)
+shape = SubResource("RectangleShape2D_8ef2b")
+
+[connection signal="area_shape_entered" from="StaticBody2D/PileOfParts" to="." method="on_area_shape_entered"]
+[connection signal="area_shape_entered" from="StaticBody2D/PileOfParts" to="Player/Label" method="area_shape_entered"]
+[connection signal="area_shape_entered" from="StaticBody2D/PileOfParts" to="Player/Label" method="_on_pile_of_parts_area_shape_entered"]
+[connection signal="body_entered" from="StaticBody2D/PileOfParts" to="Player/Label" method="_on_pile_of_parts_body_entered"]
+[connection signal="body_entered" from="StaticBody2D/PileOfParts" to="StaticBody2D/PileOfParts" method="_on_body_entered"]
+[connection signal="body_exited" from="StaticBody2D/PileOfParts" to="Player/Label" method="_on_pile_of_parts_body_exited"]
+[connection signal="body_exited" from="StaticBody2D/PileOfParts" to="StaticBody2D/PileOfParts" method="_on_body_exited"]
+[connection signal="interact_with_pile" from="StaticBody2D/PileOfParts" to="Player" method="_on_interact_with_pile"]
+[connection signal="interact_with_pile" from="StaticBody2D/PileOfParts" to="Player/Label" method="_on_interact_with_pile"]
