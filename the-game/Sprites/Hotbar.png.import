@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmlxnsfx1g76d"
-path="res://.godot/imported/Robot Side Profile Facing Left-Sheet.png-6d4f27aa57e5e07b7a0fa870ddf0b767.ctex"
+uid="uid://dl1d7w2o8wuvf"
+path="res://.godot/imported/Hotbar.png-576979661e5f78081b63cffdbc86aca7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Robot Side Profile Facing Left-Sheet.png"
-dest_files=["res://.godot/imported/Robot Side Profile Facing Left-Sheet.png-6d4f27aa57e5e07b7a0fa870ddf0b767.ctex"]
+source_file="res://Sprites/Hotbar.png"
+dest_files=["res://.godot/imported/Hotbar.png-576979661e5f78081b63cffdbc86aca7.ctex"]
 
 [params]
 

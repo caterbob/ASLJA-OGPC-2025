@@ -48,7 +48,3 @@ func _physics_process(delta: float) -> void:
 		animation.stop()
 	
 	move_and_slide()
-
-
-func _on_interact_with_pile() -> void:
-	SPEED += 100

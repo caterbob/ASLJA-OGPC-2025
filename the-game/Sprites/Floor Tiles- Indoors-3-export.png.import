@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cu7k73nwbnjln"
-path="res://.godot/imported/Sprite-0001-export.png-a9c2eeb7f978a49a8e3f7f0746747d1c.ctex"
+uid="uid://dww5s03b8ndo5"
+path="res://.godot/imported/Floor Tiles- Indoors-3-export.png-7a581610302dba953e7ae8e73bf2e172.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprite-0001-export.png"
-dest_files=["res://.godot/imported/Sprite-0001-export.png-a9c2eeb7f978a49a8e3f7f0746747d1c.ctex"]
+source_file="res://Sprites/Floor Tiles- Indoors-3-export.png"
+dest_files=["res://.godot/imported/Floor Tiles- Indoors-3-export.png-7a581610302dba953e7ae8e73bf2e172.ctex"]
 
 [params]
 

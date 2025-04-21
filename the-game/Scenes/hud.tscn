@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://dsuniggkpqps6"]
+
+[ext_resource type="Script" path="res://Scripts/hud.gd" id="1_rqmli"]
+[ext_resource type="PackedScene" uid="uid://b0w6dolq2kx24" path="res://Scenes/battery.tscn" id="3_63uii"]
+[ext_resource type="Texture2D" uid="uid://dl1d7w2o8wuvf" path="res://Sprites/Hotbar.png" id="3_j5lh0"]
+[ext_resource type="Script" path="res://Scripts/hotbar.gd" id="4_ipa44"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_rqmli")
+
+[node name="hotbar" type="Node2D" parent="."]
+script = ExtResource("4_ipa44")
+
+[node name="Sprite2D" type="Sprite2D" parent="hotbar"]
+position = Vector2(160, 36)
+texture = ExtResource("3_j5lh0")
+
+[node name="Battery" parent="." instance=ExtResource("3_63uii")]
+scale = Vector2(2, 2)

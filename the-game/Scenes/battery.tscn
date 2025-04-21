@@ -1,0 +1,225 @@
+[gd_scene load_steps=32 format=3 uid="uid://b0w6dolq2kx24"]
+
+[ext_resource type="Script" path="res://Scripts/battery.gd" id="1_xvkcn"]
+[ext_resource type="Texture2D" uid="uid://dwvma2gvh8n34" path="res://Sprites/PowerLevelIndication-Sheet.png" id="2_05a6x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uea4r"]
+atlas = ExtResource("2_05a6x")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y2qqt"]
+atlas = ExtResource("2_05a6x")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_atsis"]
+atlas = ExtResource("2_05a6x")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jf8lp"]
+atlas = ExtResource("2_05a6x")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wr3u"]
+atlas = ExtResource("2_05a6x")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mshoa"]
+atlas = ExtResource("2_05a6x")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bkysu"]
+atlas = ExtResource("2_05a6x")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gbsng"]
+atlas = ExtResource("2_05a6x")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qm1md"]
+atlas = ExtResource("2_05a6x")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s6hxi"]
+atlas = ExtResource("2_05a6x")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5hvr"]
+atlas = ExtResource("2_05a6x")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wkkyk"]
+atlas = ExtResource("2_05a6x")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jqpqm"]
+atlas = ExtResource("2_05a6x")
+region = Rect2(384, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmjii"]
+atlas = ExtResource("2_05a6x")
+region = Rect2(416, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8u01"]
+atlas = ExtResource("2_05a6x")
+region = Rect2(448, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1bpp5"]
+atlas = ExtResource("2_05a6x")
+region = Rect2(480, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ush6a"]
+atlas = ExtResource("2_05a6x")
+region = Rect2(512, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tlho2"]
+atlas = ExtResource("2_05a6x")
+region = Rect2(544, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6j48"]
+atlas = ExtResource("2_05a6x")
+region = Rect2(576, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgpib"]
+atlas = ExtResource("2_05a6x")
+region = Rect2(608, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wrewv"]
+atlas = ExtResource("2_05a6x")
+region = Rect2(640, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ot1l7"]
+atlas = ExtResource("2_05a6x")
+region = Rect2(672, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsi3n"]
+atlas = ExtResource("2_05a6x")
+region = Rect2(704, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6hijg"]
+atlas = ExtResource("2_05a6x")
+region = Rect2(736, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0ngv"]
+atlas = ExtResource("2_05a6x")
+region = Rect2(768, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rknnt"]
+atlas = ExtResource("2_05a6x")
+region = Rect2(800, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7obx"]
+atlas = ExtResource("2_05a6x")
+region = Rect2(832, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c81ie"]
+atlas = ExtResource("2_05a6x")
+region = Rect2(864, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mrdw8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uea4r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y2qqt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_atsis")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jf8lp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7wr3u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mshoa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bkysu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gbsng")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qm1md")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s6hxi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5hvr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wkkyk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jqpqm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tmjii")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8u01")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1bpp5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ush6a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tlho2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l6j48")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vgpib")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wrewv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ot1l7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lsi3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6hijg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o0ngv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rknnt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7obx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c81ie")
+}],
+"loop": true,
+"name": &"drain",
+"speed": 5.0
+}]
+
+[node name="Battery" type="Sprite2D"]
+script = ExtResource("1_xvkcn")
+
+[node name="batteryText" type="Label" parent="."]
+offset_left = 92.0
+offset_top = 68.0
+offset_right = 134.0
+offset_bottom = 91.0
+text = "Power: 100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="batteryLevel" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 10)
+sprite_frames = SubResource("SpriteFrames_mrdw8")
+animation = &"drain"

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cd3w6vc8advga"
-path="res://.godot/imported/Robot Facing Backwards-Sheet.png-0047c66bb51fe7006cb230ce875a3258.ctex"
+uid="uid://cpkycaxy7gu4v"
+path="res://.godot/imported/Robot Side Profile Facing Right-Sheet.png-003787c3dd98253dd5ba092e19042484.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Robot Facing Backwards-Sheet.png"
-dest_files=["res://.godot/imported/Robot Facing Backwards-Sheet.png-0047c66bb51fe7006cb230ce875a3258.ctex"]
+source_file="res://Sprites/Robot Side Profile Facing Right-Sheet.png"
+dest_files=["res://.godot/imported/Robot Side Profile Facing Right-Sheet.png-003787c3dd98253dd5ba092e19042484.ctex"]
 
 [params]
 

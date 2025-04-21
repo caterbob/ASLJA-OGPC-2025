@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpkycaxy7gu4v"
-path="res://.godot/imported/Robot Side Profile Facing Right-Sheet.png-cb3c7aa3780a455ff345c4574f8c8429.ctex"
+uid="uid://bi18cy8ggfynv"
+path="res://.godot/imported/Scrap Pile.png-eb08a679612733571396d486ac23ff55.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Robot Side Profile Facing Right-Sheet.png"
-dest_files=["res://.godot/imported/Robot Side Profile Facing Right-Sheet.png-cb3c7aa3780a455ff345c4574f8c8429.ctex"]
+source_file="res://Sprites/Scrap Pile.png"
+dest_files=["res://.godot/imported/Scrap Pile.png-eb08a679612733571396d486ac23ff55.ctex"]
 
 [params]
 

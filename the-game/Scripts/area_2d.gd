@@ -10,14 +10,16 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if player_in_range and Input.is_key_pressed(KEY_E):
+	if player_in_range and Input.is_action_just_pressed("interact"):
 		print("signal!")
 		emit_signal("interact_with_pile")
 
 
 func _on_body_entered(body: Node2D) -> void:
 	player_in_range = true
+	print("SIGMA")
 	
 
 func _on_body_exited(body: Node2D) -> void:
 	player_in_range = false
+	print("BETA")

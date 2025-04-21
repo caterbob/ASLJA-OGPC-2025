@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6p0h5v630pdd"
-path="res://.godot/imported/Floor Tiles- Indoors.png-15d244f788af6e7dccdbb2be1c95581a.ctex"
+uid="uid://bkq32hl6t8j85"
+path="res://.godot/imported/Inventory slot.png-5333b10e501decc902e3c7e81516f3bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Floor Tiles- Indoors.png"
-dest_files=["res://.godot/imported/Floor Tiles- Indoors.png-15d244f788af6e7dccdbb2be1c95581a.ctex"]
+source_file="res://Sprites/Inventory slot.png"
+dest_files=["res://.godot/imported/Inventory slot.png-5333b10e501decc902e3c7e81516f3bd.ctex"]
 
 [params]
 

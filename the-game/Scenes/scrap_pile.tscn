@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://c1jiilwcrilnd"]
+
+[ext_resource type="Script" path="res://Scripts/static_body_2d.gd" id="1_r3jah"]
+[ext_resource type="Texture2D" uid="uid://bi18cy8ggfynv" path="res://Sprites/Scrap Pile.png" id="2_71wha"]
+[ext_resource type="Script" path="res://Scripts/area_2d.gd" id="3_ugvjx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pwxxb"]
+size = Vector2(35.5, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ef2b"]
+size = Vector2(53, 54)
+
+[node name="Scrap Pile" type="StaticBody2D"]
+script = ExtResource("1_r3jah")
+
+[node name="scrapSprite" type="Sprite2D" parent="."]
+light_mask = 4
+visibility_layer = 4
+scale = Vector2(-1.46607, 1.51058)
+texture = ExtResource("2_71wha")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.00231, 0.99422)
+shape = SubResource("RectangleShape2D_pwxxb")
+
+[node name="interactArea" type="Area2D" parent="."]
+script = ExtResource("3_ugvjx")
+
+[node name="area" type="CollisionShape2D" parent="interactArea"]
+shape = SubResource("RectangleShape2D_8ef2b")
+
+[connection signal="body_entered" from="interactArea" to="interactArea" method="_on_body_entered"]
+[connection signal="body_exited" from="interactArea" to="interactArea" method="_on_body_exited"]
