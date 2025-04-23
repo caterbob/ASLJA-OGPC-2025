@@ -861,3 +861,9 @@ position = Vector2(111, 101)
 
 [node name="Interaction field" parent="." instance=ExtResource("12_gieu5")]
 position = Vector2(165, 270)
+
+[node name="Ice Wall" parent="." instance=ExtResource("8_hanjd")]
+position = Vector2(572, 106)
+
+[node name="Sprite2D" type="Sprite2D" parent="Ice Wall"]
+texture = ExtResource("2_k1oxr")
