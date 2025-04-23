@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cf0icd87anad8"]
+
+[ext_resource type="Script" path="res://Scenes/interaction_field.gd" id="1_822lk"]
+[ext_resource type="Script" path="res://Scripts/interact_text.gd" id="2_huhau"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w7fs2"]
+
+[node name="Interaction field" type="Node2D"]
+script = ExtResource("1_822lk")
+
+[node name="field" type="Area2D" parent="."]
+
+[node name="Area shape" type="CollisionShape2D" parent="field"]
+shape = SubResource("RectangleShape2D_w7fs2")
+
+[node name="Interact text" type="Label" parent="."]
+offset_left = 16.0
+offset_top = -11.0
+offset_right = 77.0
+offset_bottom = 12.0
+text = "Interact"
+script = ExtResource("2_huhau")
+
+[connection signal="area_entered" from="field" to="." method="_on_area_2d_area_entered"]

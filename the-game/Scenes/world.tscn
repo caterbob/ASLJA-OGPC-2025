@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bo8ih5mxcxcl"]
+[gd_scene load_steps=20 format=3 uid="uid://bo8ih5mxcxcl"]
 
 [ext_resource type="Script" path="res://Scripts/world.gd" id="1_x48rk"]
 [ext_resource type="Texture2D" uid="uid://cu7k73nwbnjln" path="res://Sprites/Sprite-0001-export.png" id="2_k1oxr"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dsuniggkpqps6" path="res://Scenes/hud.tscn" id="7_etptc"]
 [ext_resource type="Texture2D" uid="uid://cfk5iocr3q32h" path="res://Sprites/Floor Tiles- Indoors-4-export.png" id="7_ywop7"]
 [ext_resource type="PackedScene" uid="uid://c1jiilwcrilnd" path="res://Scenes/scrap_pile.tscn" id="8_hanjd"]
+[ext_resource type="PackedScene" uid="uid://cf0icd87anad8" path="res://Scenes/interaction_field.tscn" id="12_gieu5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8dxh4"]
 texture = ExtResource("2_k1oxr")
@@ -857,3 +858,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Scrap Pile" parent="." instance=ExtResource("8_hanjd")]
 position = Vector2(111, 101)
+
+[node name="Interaction field" parent="." instance=ExtResource("12_gieu5")]
+position = Vector2(165, 270)
