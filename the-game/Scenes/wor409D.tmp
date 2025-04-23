@@ -1,15 +1,16 @@
-[gd_scene load_steps=17 format=3 uid="uid://bo8ih5mxcxcl"]
+[gd_scene load_steps=18 format=3 uid="uid://bo8ih5mxcxcl"]
 
-[ext_resource type="Script" path="res://Scripts/world.gd" id="1_x48rk"]
-[ext_resource type="Texture2D" uid="uid://cu7k73nwbnjln" path="res://Sprites/Sprite-0001-export.png" id="2_k1oxr"]
-[ext_resource type="Texture2D" uid="uid://bbdbbexswn4ft" path="res://Sprites/New Piskel (2).png" id="3_nma8o"]
-[ext_resource type="Texture2D" uid="uid://6p0h5v630pdd" path="res://Sprites/Floor Tiles- Indoors.png" id="4_75oct"]
-[ext_resource type="PackedScene" uid="uid://c1tnxqkxhd1us" path="res://Scenes/player.tscn" id="5_t24n5"]
-[ext_resource type="Script" path="res://Scripts/interact_text.gd" id="6_r7fvn"]
-[ext_resource type="PackedScene" uid="uid://dsuniggkpqps6" path="res://Scenes/hud.tscn" id="7_etptc"]
-[ext_resource type="Script" path="res://Scripts/static_body_2d.gd" id="8_ki065"]
-[ext_resource type="Texture2D" uid="uid://bi18cy8ggfynv" path="res://Sprites/Scrap Pile.png" id="9_7648v"]
-[ext_resource type="Script" path="res://Scripts/area_2d.gd" id="10_ldu4d"]
+[ext_resource type="Texture2D" uid="uid://cu7k73nwbnjln" path="res://Sprite-0001-export.png" id="1_8l18e"]
+[ext_resource type="Script" path="res://world.gd" id="1_cl5hb"]
+[ext_resource type="PackedScene" uid="uid://c1tnxqkxhd1us" path="res://player.tscn" id="1_wlce4"]
+[ext_resource type="Texture2D" uid="uid://bbdbbexswn4ft" path="res://New Piskel (2).png" id="2_ubemr"]
+[ext_resource type="Texture2D" uid="uid://6p0h5v630pdd" path="res://Floor Tiles- Indoors.png" id="3_fll8y"]
+[ext_resource type="Script" path="res://label.gd" id="6_2c0f0"]
+[ext_resource type="Script" path="res://static_body_2d.gd" id="6_7ev70"]
+[ext_resource type="Script" path="res://area_2d.gd" id="7_2qr23"]
+[ext_resource type="Script" path="res://hud.gd" id="8_fr6pp"]
+[ext_resource type="Texture2D" uid="uid://bi18cy8ggfynv" path="res://Scrap Pile.png" id="8_ovham"]
+[ext_resource type="PackedScene" uid="uid://feor7a2ydky" path="res://hud.tscn" id="10_xw718"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8dxh4"]
 texture = ExtResource("2_k1oxr")
@@ -824,7 +825,7 @@ layer_0/tile_data = PackedInt32Array(0, 983041, 15, 1, 983041, 15, 65537, 2, 0, 
 [node name="Player" parent="." instance=ExtResource("5_t24n5")]
 position = Vector2(186, 156)
 
-[node name="interactText" type="Label" parent="Player"]
+[node name="InteractText" type="Label" parent="Player"]
 offset_left = -14.0
 offset_top = 12.0
 offset_right = 14.0
@@ -834,6 +835,9 @@ text = "Interact"
 script = ExtResource("6_r7fvn")
 
 [node name="HUD" parent="." instance=ExtResource("7_etptc")]
+
+[node name="HUD" parent="." instance=ExtResource("10_xw718")]
+script = ExtResource("8_fr6pp")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 script = ExtResource("8_ki065")
@@ -857,11 +861,11 @@ position = Vector2(122.5, 99)
 shape = SubResource("RectangleShape2D_8ef2b")
 
 [connection signal="area_shape_entered" from="StaticBody2D/PileOfParts" to="." method="on_area_shape_entered"]
-[connection signal="area_shape_entered" from="StaticBody2D/PileOfParts" to="Player/interactText" method="area_shape_entered"]
-[connection signal="area_shape_entered" from="StaticBody2D/PileOfParts" to="Player/interactText" method="_on_pile_of_parts_area_shape_entered"]
-[connection signal="body_entered" from="StaticBody2D/PileOfParts" to="Player/interactText" method="_on_pile_of_parts_body_entered"]
+[connection signal="area_shape_entered" from="StaticBody2D/PileOfParts" to="Player/InteractText" method="area_shape_entered"]
+[connection signal="area_shape_entered" from="StaticBody2D/PileOfParts" to="Player/InteractText" method="_on_pile_of_parts_area_shape_entered"]
+[connection signal="body_entered" from="StaticBody2D/PileOfParts" to="Player/InteractText" method="_on_pile_of_parts_body_entered"]
 [connection signal="body_entered" from="StaticBody2D/PileOfParts" to="StaticBody2D/PileOfParts" method="_on_body_entered"]
-[connection signal="body_exited" from="StaticBody2D/PileOfParts" to="Player/interactText" method="_on_pile_of_parts_body_exited"]
+[connection signal="body_exited" from="StaticBody2D/PileOfParts" to="Player/InteractText" method="_on_pile_of_parts_body_exited"]
 [connection signal="body_exited" from="StaticBody2D/PileOfParts" to="StaticBody2D/PileOfParts" method="_on_body_exited"]
 [connection signal="interact_with_pile" from="StaticBody2D/PileOfParts" to="Player" method="_on_interact_with_pile"]
-[connection signal="interact_with_pile" from="StaticBody2D/PileOfParts" to="Player/interactText" method="_on_interact_with_pile"]
+[connection signal="interact_with_pile" from="StaticBody2D/PileOfParts" to="Player/InteractText" method="_on_interact_with_pile"]
