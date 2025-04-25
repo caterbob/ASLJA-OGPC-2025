@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cd3w6vc8advga" path="res://Sprites/Robot Facing Backwards-Sheet.png" id="5_2o7pp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ehbw5"]
-size = Vector2(20, 26)
+size = Vector2(20, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dyma6"]
 atlas = ExtResource("2_hjmid")
@@ -148,6 +148,7 @@ animations = [{
 script = ExtResource("1_uvisj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_ehbw5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -155,7 +156,7 @@ sprite_frames = SubResource("SpriteFrames_q6dym")
 animation = &"walkRight"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(5, 5)
+zoom = Vector2(3.5, 3.5)
 limit_left = -1410065408
 limit_top = -1410065408
 limit_right = 1410065408

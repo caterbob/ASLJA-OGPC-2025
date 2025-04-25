@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://sx4qf6du01hu"]
+
+[ext_resource type="Texture2D" uid="uid://ca48lp2um18u4" path="res://Sprites/Ice Wall.png" id="1_c87eq"]
+[ext_resource type="Script" path="res://Scripts/area_2d.gd" id="2_wtqhy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ls1jp"]
+size = Vector2(33.7131, 38.1163)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j3jrf"]
+size = Vector2(53, 54)
+
+[node name="Ice Wall" type="StaticBody2D"]
+
+[node name="scrapSprite" type="Sprite2D" parent="."]
+light_mask = 4
+visibility_layer = 4
+rotation = -3.14159
+scale = Vector2(1.46607, -1.51058)
+texture = ExtResource("1_c87eq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.895502, 2.94798)
+scale = Vector2(1.00231, 0.99422)
+shape = SubResource("RectangleShape2D_ls1jp")
+
+[node name="interactArea" type="Area2D" parent="."]
+position = Vector2(-5, 23)
+script = ExtResource("2_wtqhy")
+
+[node name="area" type="CollisionShape2D" parent="interactArea"]
+position = Vector2(6, -19)
+shape = SubResource("RectangleShape2D_j3jrf")
+
+[connection signal="body_entered" from="interactArea" to="interactArea" method="_on_body_entered"]
+[connection signal="body_exited" from="interactArea" to="interactArea" method="_on_body_exited"]

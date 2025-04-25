@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bo8ih5mxcxcl"]
+[gd_scene load_steps=25 format=3 uid="uid://bo8ih5mxcxcl"]
 
 [ext_resource type="Script" path="res://Scripts/world.gd" id="1_x48rk"]
 [ext_resource type="Texture2D" uid="uid://cu7k73nwbnjln" path="res://Sprites/Sprite-0001-export.png" id="2_k1oxr"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cfk5iocr3q32h" path="res://Sprites/Floor Tiles- Indoors-4-export.png" id="7_ywop7"]
 [ext_resource type="PackedScene" uid="uid://c1jiilwcrilnd" path="res://Scenes/scrap_pile.tscn" id="8_hanjd"]
 [ext_resource type="PackedScene" uid="uid://cf0icd87anad8" path="res://Scenes/interaction_field.tscn" id="12_gieu5"]
+[ext_resource type="PackedScene" uid="uid://sx4qf6du01hu" path="res://Scenes/ice_wall.tscn" id="13_t2oxt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8dxh4"]
 texture = ExtResource("2_k1oxr")
@@ -833,6 +834,18 @@ sources/3 = SubResource("TileSetAtlasSource_wvsav")
 sources/4 = SubResource("TileSetAtlasSource_g78rn")
 sources/5 = SubResource("TileSetAtlasSource_e7mws")
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_d1daa"]
+distance = 0.999969
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_b0m02"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j10xq"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_72o66"]
+normal = Vector2(-1, 0)
+
 [node name="World" type="Node2D"]
 script = ExtResource("1_x48rk")
 
@@ -862,8 +875,24 @@ position = Vector2(111, 101)
 [node name="Interaction field" parent="." instance=ExtResource("12_gieu5")]
 position = Vector2(165, 270)
 
-[node name="Ice Wall" parent="." instance=ExtResource("8_hanjd")]
-position = Vector2(572, 106)
+[node name="Ice Wall" parent="." instance=ExtResource("13_t2oxt")]
+position = Vector2(568, 107)
 
-[node name="Sprite2D" type="Sprite2D" parent="Ice Wall"]
-texture = ExtResource("2_k1oxr")
+[node name="World Boundary" type="StaticBody2D" parent="."]
+
+[node name="Bottom Limit" type="CollisionShape2D" parent="World Boundary"]
+position = Vector2(267, 225)
+rotation = 0.00438012
+shape = SubResource("WorldBoundaryShape2D_d1daa")
+
+[node name="Left Limit" type="CollisionShape2D" parent="World Boundary"]
+position = Vector2(0, 109)
+shape = SubResource("WorldBoundaryShape2D_b0m02")
+
+[node name="Top Limit" type="CollisionShape2D" parent="World Boundary"]
+position = Vector2(280, -2)
+shape = SubResource("WorldBoundaryShape2D_j10xq")
+
+[node name="Right Limit" type="CollisionShape2D" parent="World Boundary"]
+position = Vector2(577, 102)
+shape = SubResource("WorldBoundaryShape2D_72o66")
