@@ -11,11 +11,15 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	var direction := Input.get_axis("ui_left", "ui_right")
+	var direction2 := Input.get_axis("ui_up", "ui_down")
+	if abs(direction) > 0 or abs(direction2) > 0:
+		deplete_battery(.025)
 	if Input.is_key_pressed(KEY_I):
-		deplete_battery()
+		deplete_battery(1)
 
-func deplete_battery() -> void:
+func deplete_battery(amount) -> void:
 	if batteryLevel > 0:
-		batteryLevel -= 1
-		$batteryText.text = "Power: " + str(batteryLevel)
+		batteryLevel -= amount
+		$batteryText.text = "Power: " + str(round(batteryLevel))
 		$batteryLevel.frame = int(28 - batteryLevel/(100/28))

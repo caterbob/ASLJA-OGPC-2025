@@ -18,3 +18,4 @@ func _on_field_body_entered(body: Node2D) -> void:
 
 func _on_field_body_exited(body: Node2D) -> void:
 	self.visible = false
+	

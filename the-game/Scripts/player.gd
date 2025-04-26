@@ -5,18 +5,20 @@ var SPEED = 50.0
 
 @onready var animation = $AnimatedSprite2D
 
-
+var battery
 	
 func _physics_process(delta: float) -> void:
+	pass
 	# Add the gravity.
 	
-
+func _ready() -> void:
+	battery = get_node("/root/World/Battery")
 
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	
-
+func _process(delta: float) -> void:
 	var direction := Input.get_axis("ui_left", "ui_right")
 	var direction2 := Input.get_axis("ui_up", "ui_down")
 	if direction and direction2:
