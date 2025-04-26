@@ -9,7 +9,7 @@ func _ready() -> void:
 		newInvSlot.position = Vector2(72 + i*48,38)
 		add_child(newInvSlot)
 		slots.append(newInvSlot)
-		print(slots.size())
+
 
 	slots[selected].scale = Vector2(1.2,1.2)
 # Called every frame. 'delta' is the elapsed time since the previous frame.

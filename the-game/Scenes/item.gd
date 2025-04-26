@@ -1,10 +1,9 @@
-extends Label
+extends Node2D
 
-
+@onready var interaction = get_node("balls")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	self.visible = false
-
+	get_node("balls/Interact text").text = "pick up"
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -12,9 +11,8 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_field_body_entered(body: Node2D) -> void:
-	self.visible = true
 
 
-func _on_field_body_exited(body: Node2D) -> void:
-	self.visible = false
+func _on_balls_trigger() -> void:
+	print("Hooray")
+	self.queue_free()

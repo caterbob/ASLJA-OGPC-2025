@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cf0icd87anad8"]
 
-[ext_resource type="Script" path="res://Scenes/interaction_field.gd" id="1_822lk"]
+[ext_resource type="Script" path="res://Scripts/interaction_field.gd" id="1_822lk"]
 [ext_resource type="Script" path="res://Scripts/interact_text.gd" id="2_huhau"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w7fs2"]
@@ -21,4 +21,7 @@ offset_bottom = 12.0
 text = "Interact"
 script = ExtResource("2_huhau")
 
-[connection signal="area_entered" from="field" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="field" to="." method="_on_field_body_entered"]
+[connection signal="body_entered" from="field" to="Interact text" method="_on_field_body_entered"]
+[connection signal="body_exited" from="field" to="." method="_on_field_body_exited"]
+[connection signal="body_exited" from="field" to="Interact text" method="_on_field_body_exited"]

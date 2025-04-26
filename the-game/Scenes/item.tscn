@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://f35kg0gftxjh"]
+
+[ext_resource type="Script" path="res://Scenes/item.gd" id="1_2qyym"]
+[ext_resource type="Texture2D" uid="uid://ku0mbvpuk2m1" path="res://Sprites/gear.png" id="1_jokr7"]
+[ext_resource type="PackedScene" uid="uid://cf0icd87anad8" path="res://Scenes/interaction_field.tscn" id="2_7paje"]
+
+[node name="Item" type="Node2D"]
+script = ExtResource("1_2qyym")
+
+[node name="itemSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_jokr7")
+
+[node name="balls" parent="." instance=ExtResource("2_7paje")]
+
+[connection signal="trigger" from="balls" to="." method="_on_balls_trigger"]

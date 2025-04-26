@@ -155,7 +155,6 @@ sprite_frames = SubResource("SpriteFrames_q6dym")
 animation = &"walkRight"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(5, 5)
 limit_left = -1410065408
 limit_top = -1410065408
 limit_right = 1410065408
