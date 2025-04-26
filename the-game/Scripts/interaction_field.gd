@@ -1,5 +1,5 @@
 extends Node2D
-
+@onready var player = get_node("/root/World/Player")
 var entered = false
 signal trigger()
 # Called when the node enters the scene tree for the first time.
@@ -9,7 +9,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("interact"):
+	if Input.is_action_just_pressed("interact") and entered:
 		emit_signal("trigger")
 
 
@@ -17,8 +17,10 @@ func _process(delta: float) -> void:
 
 
 func _on_field_body_entered(body: Node2D) -> void:
+
 	entered = true
 
 
 func _on_field_body_exited(body: Node2D) -> void:
+	
 	entered = false

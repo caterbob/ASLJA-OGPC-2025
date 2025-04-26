@@ -9,6 +9,8 @@
 script = ExtResource("1_822lk")
 
 [node name="field" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
 
 [node name="Area shape" type="CollisionShape2D" parent="field"]
 shape = SubResource("RectangleShape2D_w7fs2")
