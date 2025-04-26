@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://sx4qf6du01hu"]
+[gd_scene load_steps=4 format=3 uid="uid://bbrjje885rjkt"]
 
 [ext_resource type="Texture2D" uid="uid://ca48lp2um18u4" path="res://Sprites/Ice Wall.png" id="1_c87eq"]
-[ext_resource type="Script" path="res://Scripts/area_2d.gd" id="2_wtqhy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ls1jp"]
 size = Vector2(33.7131, 38.1163)
@@ -25,7 +24,6 @@ shape = SubResource("RectangleShape2D_ls1jp")
 
 [node name="interactArea" type="Area2D" parent="."]
 position = Vector2(-5, 23)
-script = ExtResource("2_wtqhy")
 
 [node name="area" type="CollisionShape2D" parent="interactArea"]
 position = Vector2(6, -19)

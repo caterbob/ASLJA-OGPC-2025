@@ -12,10 +12,6 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("interact") and entered:
 		emit_signal("trigger")
 
-
-
-
-
 func _on_field_body_entered(body: Node2D) -> void:
 
 	entered = true

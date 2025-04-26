@@ -22,3 +22,5 @@ texture = ExtResource("2_bv1ni")
 [node name="balls" parent="." instance=ExtResource("3_7001k")]
 position = Vector2(0, 3)
 scale = Vector2(1.5, 1.5)
+
+[connection signal="trigger" from="balls" to="." method="_on_balls_trigger"]
