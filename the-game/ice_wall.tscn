@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dm4qj6buem0ig"]
 
-[ext_resource type="Script" path="res://scrap_pile.gd" id="1_grc3j"]
+[ext_resource type="Script" path="res://ice_wall.gd" id="1_b4ple"]
 [ext_resource type="Texture2D" uid="uid://ca48lp2um18u4" path="res://Sprites/Ice Wall.png" id="2_mryqj"]
 [ext_resource type="PackedScene" uid="uid://cf0icd87anad8" path="res://Scenes/interaction_field.tscn" id="3_7cvx0"]
 
@@ -8,7 +8,7 @@
 size = Vector2(25, 14)
 
 [node name="iceWall" type="Node2D"]
-script = ExtResource("1_grc3j")
+script = ExtResource("1_b4ple")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -22,3 +22,5 @@ texture = ExtResource("2_mryqj")
 [node name="Interaction" parent="." instance=ExtResource("3_7cvx0")]
 position = Vector2(-6, 2)
 scale = Vector2(1.5, 1.5)
+
+[connection signal="trigger" from="Interaction" to="." method="_on_interaction_trigger"]

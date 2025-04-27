@@ -1,5 +1,4 @@
 extends Node2D
-@onready var player = get_node("/root/World/Player")
 var entered = false
 signal trigger()
 # Called when the node enters the scene tree for the first time.

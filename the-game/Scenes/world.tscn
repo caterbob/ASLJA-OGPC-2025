@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bo8ih5mxcxcl"]
+[gd_scene load_steps=28 format=3 uid="uid://bo8ih5mxcxcl"]
 
 [ext_resource type="Script" path="res://Scripts/world.gd" id="1_x48rk"]
 [ext_resource type="Texture2D" uid="uid://cu7k73nwbnjln" path="res://Sprites/Sprite-0001-export.png" id="2_k1oxr"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://dww5s03b8ndo5" path="res://Sprites/Floor Tiles- Indoors-3-export.png" id="5_53fag"]
 [ext_resource type="PackedScene" uid="uid://c1tnxqkxhd1us" path="res://Scenes/player.tscn" id="5_t24n5"]
 [ext_resource type="Texture2D" uid="uid://g5jgebyvdalr" path="res://Sprites/Floor Tiles- Indoors-2.png" id="6_pcwum"]
-[ext_resource type="PackedScene" uid="uid://dsuniggkpqps6" path="res://Scenes/hud.tscn" id="7_etptc"]
 [ext_resource type="Texture2D" uid="uid://cfk5iocr3q32h" path="res://Sprites/Floor Tiles- Indoors-4-export.png" id="7_ywop7"]
 [ext_resource type="Texture2D" uid="uid://deby3k7gwv44n" path="res://Sprites/WallSide.png" id="8_fnbo2"]
 [ext_resource type="Texture2D" uid="uid://daedaqjotti0" path="res://Sprites/Wall.png" id="9_0mfgb"]
@@ -887,8 +886,6 @@ layer_0/tile_data = PackedInt32Array(393215, 6, 0, 327679, 6, 0, 262143, 6, 0, 1
 
 [node name="Player" parent="." instance=ExtResource("5_t24n5")]
 position = Vector2(339, 101)
-
-[node name="HUD" parent="." instance=ExtResource("7_etptc")]
 
 [node name="World Boundary" type="StaticBody2D" parent="."]
 

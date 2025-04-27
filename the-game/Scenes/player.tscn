@@ -1,10 +1,11 @@
-[gd_scene load_steps=24 format=3 uid="uid://c1tnxqkxhd1us"]
+[gd_scene load_steps=25 format=3 uid="uid://c1tnxqkxhd1us"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_uvisj"]
 [ext_resource type="Texture2D" uid="uid://bmlxnsfx1g76d" path="res://Sprites/Robot Side Profile Facing Left-Sheet.png" id="2_2n60d"]
 [ext_resource type="Texture2D" uid="uid://c05ah5dthtage" path="res://Sprites/Robot-Sheet.png" id="2_hjmid"]
 [ext_resource type="Texture2D" uid="uid://cpkycaxy7gu4v" path="res://Sprites/Robot Side Profile Facing Right-Sheet.png" id="4_7vvcg"]
 [ext_resource type="Texture2D" uid="uid://cd3w6vc8advga" path="res://Sprites/Robot Facing Backwards-Sheet.png" id="5_2o7pp"]
+[ext_resource type="PackedScene" uid="uid://dsuniggkpqps6" path="res://Scenes/hud.tscn" id="6_4mjdw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ehbw5"]
 size = Vector2(20, 25)
@@ -157,8 +158,10 @@ sprite_frames = SubResource("SpriteFrames_q6dym")
 animation = &"walkRight"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3.5, 3.5)
+zoom = Vector2(3, 3)
 limit_left = -1410065408
 limit_top = -1410065408
 limit_right = 1410065408
 limit_bottom = 1600000000
+
+[node name="HUD" parent="." instance=ExtResource("6_4mjdw")]
