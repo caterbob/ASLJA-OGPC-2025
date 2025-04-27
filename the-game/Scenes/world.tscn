@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://f35kg0gftxjh" path="res://Scenes/item.tscn" id="13_qnm4c"]
 [ext_resource type="PackedScene" uid="uid://c5pdatvfylghm" path="res://Scenes/ice_wall.tscn" id="13_t2oxt"]
 [ext_resource type="PackedScene" uid="uid://d1kmcj8utxo5a" path="res://Scenes/scrap_pile.tscn" id="16_nqd1i"]
+[ext_resource type="PackedScene" uid="uid://dm4qj6buem0ig" path="res://ice_wall.tscn" id="15_4cvvk"]
+[ext_resource type="PackedScene" uid="uid://d1kmcj8utxo5a" path="res://scrap_pile.tscn" id="16_nqd1i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8dxh4"]
 texture = ExtResource("2_k1oxr")
@@ -889,6 +891,8 @@ position = Vector2(376, 109)
 
 [node name="Ice Wall" parent="." instance=ExtResource("13_t2oxt")]
 position = Vector2(568, 107)
+[node name="Player" parent="." instance=ExtResource("5_t24n5")]
+position = Vector2(339, 101)
 
 [node name="World Boundary" type="StaticBody2D" parent="."]
 
@@ -911,3 +915,6 @@ shape = SubResource("WorldBoundaryShape2D_72o66")
 
 [node name="scrapPile" parent="." instance=ExtResource("16_nqd1i")]
 position = Vector2(158, 98)
+
+[node name="iceWall" parent="." instance=ExtResource("15_4cvvk")]
+position = Vector2(573, 103)

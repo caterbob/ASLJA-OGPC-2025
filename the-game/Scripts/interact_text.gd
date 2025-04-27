@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 
 func _on_field_body_entered(body: Node2D) -> void:
 	
-		self.visible = true
+	self.visible = true
 
 
 func _on_field_body_exited(body: Node2D) -> void:

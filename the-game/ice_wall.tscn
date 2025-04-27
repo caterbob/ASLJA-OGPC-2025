@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dm4qj6buem0ig"]
+
+[ext_resource type="Script" path="res://ice_wall.gd" id="1_b4ple"]
+[ext_resource type="Texture2D" uid="uid://ca48lp2um18u4" path="res://Sprites/Ice Wall.png" id="2_mryqj"]
+[ext_resource type="PackedScene" uid="uid://cf0icd87anad8" path="res://Scenes/interaction_field.tscn" id="3_7cvx0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vj6mr"]
+size = Vector2(25, 14)
+
+[node name="iceWall" type="Node2D"]
+script = ExtResource("1_b4ple")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-0.5, 3)
+shape = SubResource("RectangleShape2D_vj6mr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_mryqj")
+
+[node name="Interaction" parent="." instance=ExtResource("3_7cvx0")]
+position = Vector2(-6, 2)
+scale = Vector2(1.5, 1.5)
+
+[connection signal="trigger" from="Interaction" to="." method="_on_interaction_trigger"]

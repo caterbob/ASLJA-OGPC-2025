@@ -13,13 +13,14 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	var direction := Input.get_axis("ui_left", "ui_right")
 	var direction2 := Input.get_axis("ui_up", "ui_down")
+	$batteryText.text = "Power: " + str(round(batteryLevel))
+	$batteryLevel.frame = int(28 - batteryLevel/(100/28))
 	if abs(direction) > 0 or abs(direction2) > 0:
-		deplete_battery(.025)
+		pass
+		#deplete_battery(.025)
 	if Input.is_key_pressed(KEY_I):
 		deplete_battery(1)
 
 func deplete_battery(amount) -> void:
 	if batteryLevel > 0:
 		batteryLevel -= amount
-		$batteryText.text = "Power: " + str(round(batteryLevel))
-		$batteryLevel.frame = int(28 - batteryLevel/(100/28))
