@@ -11,10 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://daedaqjotti0" path="res://Sprites/Wall.png" id="9_0mfgb"]
 [ext_resource type="Texture2D" uid="uid://dsf251iqd81ym" path="res://Sprites/Floor Big.png" id="10_x1t46"]
 [ext_resource type="PackedScene" uid="uid://f35kg0gftxjh" path="res://Scenes/item.tscn" id="13_qnm4c"]
-[ext_resource type="PackedScene" uid="uid://c5pdatvfylghm" path="res://Scenes/ice_wall.tscn" id="13_t2oxt"]
+[ext_resource type="PackedScene" uid="uid://dm4qj6buem0ig" path="res://Scenes/ice_wall.tscn" id="15_4cvvk"]
 [ext_resource type="PackedScene" uid="uid://d1kmcj8utxo5a" path="res://Scenes/scrap_pile.tscn" id="16_nqd1i"]
-[ext_resource type="PackedScene" uid="uid://dm4qj6buem0ig" path="res://ice_wall.tscn" id="15_4cvvk"]
-[ext_resource type="PackedScene" uid="uid://d1kmcj8utxo5a" path="res://scrap_pile.tscn" id="16_nqd1i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8dxh4"]
 texture = ExtResource("2_k1oxr")
@@ -888,11 +886,6 @@ layer_0/tile_data = PackedInt32Array(393215, 6, 0, 327679, 6, 0, 262143, 6, 0, 1
 
 [node name="Item" parent="." instance=ExtResource("13_qnm4c")]
 position = Vector2(376, 109)
-
-[node name="Ice Wall" parent="." instance=ExtResource("13_t2oxt")]
-position = Vector2(568, 107)
-[node name="Player" parent="." instance=ExtResource("5_t24n5")]
-position = Vector2(339, 101)
 
 [node name="World Boundary" type="StaticBody2D" parent="."]
 

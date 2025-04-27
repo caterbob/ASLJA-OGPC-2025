@@ -3,7 +3,7 @@ extends Node2D
 signal trigger()
 @onready var rng = RandomNumberGenerator.new()
 @onready var totalGears = 3
-@onready var battery = get_node("/root/Garage/Player/HUD/Battery")
+@onready var battery = get_node("/root/Player/HUD/Battery")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
