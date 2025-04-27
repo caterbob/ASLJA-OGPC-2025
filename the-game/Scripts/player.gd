@@ -12,6 +12,11 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	
 func _ready() -> void:
+	
+	get_tree().get_root().add_child(self)
+	self.owner = null
+	
+	
 	battery = get_node("/root/World/Battery")
 
 

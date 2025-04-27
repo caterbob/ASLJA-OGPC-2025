@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://d1kmcj8utxo5a"]
 
-[ext_resource type="Script" path="res://scrap_pile.gd" id="1_bwhij"]
+[ext_resource type="Script" path="res://Scripts/scrap_pile.gd" id="1_bwhij"]
 [ext_resource type="Texture2D" uid="uid://bi18cy8ggfynv" path="res://Sprites/Scrap Pile.png" id="2_bv1ni"]
 [ext_resource type="PackedScene" uid="uid://cf0icd87anad8" path="res://Scenes/interaction_field.tscn" id="3_7001k"]
 
