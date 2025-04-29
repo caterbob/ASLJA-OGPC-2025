@@ -156,7 +156,7 @@ shape = SubResource("RectangleShape2D_ehbw5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_q6dym")
-animation = &"walkRight"
+animation = &"walkLeft"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
@@ -166,5 +166,3 @@ limit_right = 1410065408
 limit_bottom = 1600000000
 
 [node name="HUD" parent="." instance=ExtResource("6_4mjdw")]
-
-[node name="HUD2" parent="." instance=ExtResource("6_4mjdw")]
