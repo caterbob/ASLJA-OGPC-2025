@@ -15,7 +15,7 @@ func _ready() -> void:
 	
 	get_tree().get_root().add_child(self)
 	self.owner = null
-	
+	self.position = Vector2(300,100)
 	
 	battery = get_node("/root/World/Battery")
 

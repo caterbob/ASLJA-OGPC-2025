@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dsuniggkpqps6" path="res://Scenes/hud.tscn" id="6_4mjdw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ehbw5"]
-size = Vector2(10, 8)
+size = Vector2(10, 9)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dyma6"]
 atlas = ExtResource("2_hjmid")
@@ -151,7 +151,7 @@ collision_layer = 3
 script = ExtResource("1_uvisj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 12)
+position = Vector2(-1, 11.5)
 shape = SubResource("RectangleShape2D_ehbw5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -166,5 +166,4 @@ limit_right = 1410065408
 limit_bottom = 1600000000
 
 [node name="HUD" parent="." instance=ExtResource("6_4mjdw")]
-
-[node name="HUD2" parent="." instance=ExtResource("6_4mjdw")]
+visible = false
