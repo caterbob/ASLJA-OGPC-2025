@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bo8ih5mxcxcl"]
+[gd_scene load_steps=30 format=3 uid="uid://bo8ih5mxcxcl"]
 
 [ext_resource type="Script" path="res://Scripts/world.gd" id="1_x48rk"]
 [ext_resource type="Texture2D" uid="uid://cu7k73nwbnjln" path="res://Sprites/Sprite-0001-export.png" id="2_k1oxr"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://f35kg0gftxjh" path="res://Scenes/item.tscn" id="13_qnm4c"]
 [ext_resource type="Texture2D" uid="uid://cynuly2k4cetl" path="res://Sprites/Exit Sign.png" id="14_xymuy"]
 [ext_resource type="PackedScene" uid="uid://dm4qj6buem0ig" path="res://Scenes/ice_wall.tscn" id="15_4cvvk"]
+[ext_resource type="PackedScene" uid="uid://ncthucxe4vn2" path="res://Scenes/hand_crank.tscn" id="15_dxgrc"]
 [ext_resource type="PackedScene" uid="uid://d1kmcj8utxo5a" path="res://Scenes/scrap_pile.tscn" id="16_nqd1i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8dxh4"]
@@ -916,3 +917,6 @@ position = Vector2(573, 103)
 [node name="ExitSign" type="Sprite2D" parent="."]
 position = Vector2(511, 109)
 texture = ExtResource("14_xymuy")
+
+[node name="Hand Crank" parent="." instance=ExtResource("15_dxgrc")]
+position = Vector2(237, 43)

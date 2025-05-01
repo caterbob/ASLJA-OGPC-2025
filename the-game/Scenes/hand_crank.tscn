@@ -1,0 +1,80 @@
+[gd_scene load_steps=14 format=3 uid="uid://ncthucxe4vn2"]
+
+[ext_resource type="Script" path="res://Scenes/hand_crank.gd" id="1_efbms"]
+[ext_resource type="Texture2D" uid="uid://d3u6fmmcvbgln" path="res://Sprites/Hand Crank Generator-Sheet.png" id="2_4agdj"]
+[ext_resource type="PackedScene" uid="uid://cf0icd87anad8" path="res://Scenes/interaction_field.tscn" id="3_k8gn2"]
+[ext_resource type="Script" path="res://Scenes/interaction_field.gd" id="4_jk0mq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wrkjj"]
+atlas = ExtResource("2_4agdj")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i04nc"]
+atlas = ExtResource("2_4agdj")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_foyjf"]
+atlas = ExtResource("2_4agdj")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4j5hi"]
+atlas = ExtResource("2_4agdj")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ld31w"]
+atlas = ExtResource("2_4agdj")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aw3sw"]
+atlas = ExtResource("2_4agdj")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2i36"]
+atlas = ExtResource("2_4agdj")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnxgi"]
+atlas = ExtResource("2_4agdj")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6xifh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wrkjj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i04nc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_foyjf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4j5hi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ld31w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aw3sw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2i36")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vnxgi")
+}],
+"loop": true,
+"name": &"cranking",
+"speed": 12.0
+}]
+
+[node name="Hand Crank" type="Node2D"]
+script = ExtResource("1_efbms")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6xifh")
+animation = &"cranking"
+
+[node name="Crank Interaction" parent="." instance=ExtResource("3_k8gn2")]
+script = ExtResource("4_jk0mq")
