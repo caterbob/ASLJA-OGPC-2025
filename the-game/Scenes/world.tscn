@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bo8ih5mxcxcl"]
+[gd_scene load_steps=34 format=3 uid="uid://bo8ih5mxcxcl"]
 
 [ext_resource type="Script" path="res://Scripts/world.gd" id="1_x48rk"]
 [ext_resource type="Texture2D" uid="uid://cu7k73nwbnjln" path="res://Sprites/Sprite-0001-export.png" id="2_k1oxr"]
@@ -17,6 +17,8 @@
 [ext_resource type="PackedScene" uid="uid://d1kmcj8utxo5a" path="res://Scenes/scrap_pile.tscn" id="16_nqd1i"]
 [ext_resource type="AudioStream" uid="uid://0ohpoypahrkp" path="res://Sprites/Factory theme.mp3" id="16_t0t1t"]
 [ext_resource type="Script" path="res://Scenes/audio_stream_player.gd" id="17_dawo8"]
+[ext_resource type="Script" path="res://Scenes/title_theme.gd" id="18_desiy"]
+[ext_resource type="AudioStream" uid="uid://ckrtj21mrr85r" path="res://Sprites/Title Theme.mp3" id="18_xpv6v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8dxh4"]
 texture = ExtResource("2_k1oxr")
@@ -916,7 +918,7 @@ shape = SubResource("WorldBoundaryShape2D_72o66")
 [node name="scrapPile" parent="." instance=ExtResource("16_nqd1i")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(158, 98)
+position = Vector2(146, 155)
 
 [node name="iceWall" parent="." instance=ExtResource("15_4cvvk")]
 z_index = 1
@@ -931,7 +933,11 @@ texture = ExtResource("14_xymuy")
 z_index = 1
 position = Vector2(237, 43)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Factory Theme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_t0t1t")
 autoplay = true
 script = ExtResource("17_dawo8")
+
+[node name="Title Theme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_xpv6v")
+script = ExtResource("18_desiy")
