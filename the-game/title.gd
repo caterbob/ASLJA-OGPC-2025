@@ -3,7 +3,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	$AudioStreamPlayer.play()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -12,9 +12,11 @@ func _process(delta: float) -> void:
 
 
 func _on_button_pressed() -> void:
+	$AudioStreamPlayer.stop()
 	var world = get_node("/root/World")
 	world.set_process(true)
 	world.visible = true
+	world.position = Vector2(0,0)
 	var player = get_node("/root/Player")
 	player.set_process(true)
 	player.visible = true

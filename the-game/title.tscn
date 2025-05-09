@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ukyrv54cgfq1"]
+[gd_scene load_steps=4 format=3 uid="uid://ukyrv54cgfq1"]
 
 [ext_resource type="Texture2D" uid="uid://1d43kq1hqknt" path="res://Sprites/Title Screen.png" id="1_10ibf"]
 [ext_resource type="Script" path="res://title.gd" id="1_oybu1"]
+[ext_resource type="AudioStream" uid="uid://ckrtj21mrr85r" path="res://Sprites/Title Theme.mp3" id="3_tyisr"]
 
 [node name="Title" type="Node2D"]
 script = ExtResource("1_oybu1")
@@ -16,5 +17,8 @@ offset_top = 34.0
 offset_right = 275.0
 offset_bottom = 94.0
 text = "Play"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_tyisr")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
