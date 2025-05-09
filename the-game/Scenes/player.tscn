@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c1tnxqkxhd1us"]
+[gd_scene load_steps=26 format=3 uid="uid://c1tnxqkxhd1us"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_uvisj"]
 [ext_resource type="Texture2D" uid="uid://bmlxnsfx1g76d" path="res://Sprites/Robot Side Profile Facing Left-Sheet.png" id="2_2n60d"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cpkycaxy7gu4v" path="res://Sprites/Robot Side Profile Facing Right-Sheet.png" id="4_7vvcg"]
 [ext_resource type="Texture2D" uid="uid://cd3w6vc8advga" path="res://Sprites/Robot Facing Backwards-Sheet.png" id="5_2o7pp"]
 [ext_resource type="PackedScene" uid="uid://dsuniggkpqps6" path="res://Scenes/hud.tscn" id="6_4mjdw"]
+[ext_resource type="Script" path="res://Scenes/camera_2d.gd" id="6_u4qh2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ehbw5"]
 size = Vector2(10, 9)
@@ -164,5 +165,6 @@ limit_left = -1410065408
 limit_top = -1410065408
 limit_right = 1410065408
 limit_bottom = 1600000000
+script = ExtResource("6_u4qh2")
 
 [node name="HUD" parent="." instance=ExtResource("6_4mjdw")]

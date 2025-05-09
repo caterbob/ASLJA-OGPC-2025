@@ -5,6 +5,7 @@ signal trigger()
 @onready var totalGears = 3
 @onready var battery = get_node("/root/Player/HUD/Battery")
 @onready var player = get_node("/root/Player")
+@onready var world = get_node("/root/World")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,7 +16,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("interact") and $Interaction.entered:
 		if battery.batteryLevel > 50:
-			get_tree().change_scene_to_file("res://Scenes/outside.tscn")
+			world.switchToOutside()
+			world.isFactory = true
 			battery.deplete_battery(50)
 			player.position = Vector2(100, 100)
 		else:

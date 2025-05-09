@@ -1,8 +1,9 @@
 extends Node2D
-
+var isFactory
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	isFactory = false
 	self.set_process(false)
 	self.visible = false
 	self.position = Vector2(9999999999999,0)
