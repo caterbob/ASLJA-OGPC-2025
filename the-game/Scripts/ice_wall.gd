@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 		if battery.batteryLevel > 50:
 			get_tree().change_scene_to_file("res://Scenes/outside.tscn")
 			battery.deplete_battery(50)
-			player.position = Vector2(0, 0)
+			player.position = Vector2(100, 100)
 		else:
 			print("NO BREAK!")
 

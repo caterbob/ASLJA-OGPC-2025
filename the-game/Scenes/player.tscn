@@ -146,7 +146,8 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
-z_index = 1
+z_index = 2
+y_sort_enabled = true
 collision_layer = 3
 script = ExtResource("1_uvisj")
 

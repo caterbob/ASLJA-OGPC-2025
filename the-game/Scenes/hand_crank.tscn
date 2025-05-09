@@ -82,6 +82,7 @@ animations = [{
 size = Vector2(18, 26)
 
 [node name="Hand Crank" type="StaticBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_efbms")
 
 [node name="Crank Animation" type="AnimatedSprite2D" parent="."]

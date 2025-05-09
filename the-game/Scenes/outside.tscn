@@ -32,3 +32,5 @@ layer_0/tile_data = PackedInt32Array(0, 0, 805306368, 65536, 1, 0, 65537, 0, 134
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_i6pb3")
 script = ExtResource("5_eoyn2")
+
+[node name="Wind Turbine" type="StaticBody2D" parent="."]
