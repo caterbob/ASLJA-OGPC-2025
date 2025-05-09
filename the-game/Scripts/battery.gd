@@ -1,6 +1,6 @@
 extends Sprite2D
 
-var batteryLevel = 100
+var batteryLevel = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$batteryText.position = Vector2(10,-10)
@@ -18,9 +18,11 @@ func _process(delta: float) -> void:
 	if abs(direction) > 0 or abs(direction2) > 0:
 		pass
 		#deplete_battery(.025)
-	if Input.is_key_pressed(KEY_I):
-		deplete_battery(1)
 
 func deplete_battery(amount) -> void:
 	if batteryLevel > 0:
 		batteryLevel -= amount
+		
+func charge_battery(amount) -> void:
+	if batteryLevel + amount <= 100:
+		batteryLevel += amount

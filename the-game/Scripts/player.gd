@@ -12,6 +12,7 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	
 func _ready() -> void:
+	self.position = Vector2(190, 90)
 	
 	get_tree().get_root().add_child(self)
 	self.owner = null

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ckrtj21mrr85r"
+path="res://.godot/imported/Title Theme.mp3-b64a0c199eb7e2aca3d7f200ce50e514.mp3str"
+
+[deps]
+
+source_file="res://Sprites/Title Theme.mp3"
+dest_files=["res://.godot/imported/Title Theme.mp3-b64a0c199eb7e2aca3d7f200ce50e514.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

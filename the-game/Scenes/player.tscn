@@ -146,7 +146,8 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
-z_index = 1
+z_index = 2
+y_sort_enabled = true
 collision_layer = 3
 script = ExtResource("1_uvisj")
 
@@ -156,7 +157,7 @@ shape = SubResource("RectangleShape2D_ehbw5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_q6dym")
-animation = &"walkRight"
+animation = &"walkLeft"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = -1410065408

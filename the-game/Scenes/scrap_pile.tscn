@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cf0icd87anad8" path="res://Scenes/interaction_field.tscn" id="3_7001k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vj6mr"]
-size = Vector2(25, 14)
+size = Vector2(25, 20)
 
 [node name="scrapPile" type="Node2D"]
 script = ExtResource("1_bwhij")
@@ -13,14 +13,14 @@ script = ExtResource("1_bwhij")
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-0.5, 3)
+position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_vj6mr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_bv1ni")
 
 [node name="balls" parent="." instance=ExtResource("3_7001k")]
-position = Vector2(0, 3)
-scale = Vector2(1.5, 1.5)
+position = Vector2(-5.96046e-08, 2)
+scale = Vector2(1.26, 1.26)
 
 [connection signal="trigger" from="balls" to="." method="_on_balls_trigger"]

@@ -16,11 +16,12 @@ collision_mask = 2
 shape = SubResource("RectangleShape2D_w7fs2")
 
 [node name="Interact text" type="Label" parent="."]
-offset_left = -27.0
-offset_top = -31.0
-offset_right = 34.0
-offset_bottom = -8.0
+offset_left = -63.0
+offset_top = -26.0
+offset_right = -2.0
+offset_bottom = -3.0
 text = "Interact"
+horizontal_alignment = 1
 script = ExtResource("2_huhau")
 
 [connection signal="body_entered" from="field" to="." method="_on_field_body_entered"]

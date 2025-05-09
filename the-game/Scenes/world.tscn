@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bo8ih5mxcxcl"]
+[gd_scene load_steps=32 format=3 uid="uid://bo8ih5mxcxcl"]
 
 [ext_resource type="Script" path="res://Scripts/world.gd" id="1_x48rk"]
 [ext_resource type="Texture2D" uid="uid://cu7k73nwbnjln" path="res://Sprites/Sprite-0001-export.png" id="2_k1oxr"]
@@ -11,8 +11,12 @@
 [ext_resource type="Texture2D" uid="uid://daedaqjotti0" path="res://Sprites/Wall.png" id="9_0mfgb"]
 [ext_resource type="Texture2D" uid="uid://dsf251iqd81ym" path="res://Sprites/Floor Big.png" id="10_x1t46"]
 [ext_resource type="PackedScene" uid="uid://f35kg0gftxjh" path="res://Scenes/item.tscn" id="13_qnm4c"]
+[ext_resource type="Texture2D" uid="uid://cynuly2k4cetl" path="res://Sprites/Exit Sign.png" id="14_xymuy"]
 [ext_resource type="PackedScene" uid="uid://dm4qj6buem0ig" path="res://Scenes/ice_wall.tscn" id="15_4cvvk"]
+[ext_resource type="PackedScene" uid="uid://ncthucxe4vn2" path="res://Scenes/hand_crank.tscn" id="15_dxgrc"]
 [ext_resource type="PackedScene" uid="uid://d1kmcj8utxo5a" path="res://Scenes/scrap_pile.tscn" id="16_nqd1i"]
+[ext_resource type="AudioStream" uid="uid://0ohpoypahrkp" path="res://Sprites/Factory theme.mp3" id="16_t0t1t"]
+[ext_resource type="Script" path="res://Scenes/audio_stream_player.gd" id="17_dawo8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8dxh4"]
 texture = ExtResource("2_k1oxr")
@@ -877,9 +881,12 @@ normal = Vector2(0, 1)
 normal = Vector2(-1, 0)
 
 [node name="Garage" type="Node2D"]
+z_index = -2
+y_sort_enabled = true
 script = ExtResource("1_x48rk")
 
 [node name="TileMap" type="TileMap" parent="."]
+y_sort_enabled = true
 tile_set = SubResource("TileSet_5dnxl")
 format = 2
 layer_0/tile_data = PackedInt32Array(393215, 6, 0, 327679, 6, 0, 262143, 6, 0, 196607, 6, 0, 131071, 6, 0, 65535, 6, 0, -65536, 7, 1, -65534, 7, 1, -65532, 7, 1, -65530, 7, 1, -65528, 7, 1, -65526, 7, 1, -65524, 7, 1, -65522, 7, 1, -65520, 7, 1, -65519, 65543, 1, -65521, 65543, 1, -65523, 65543, 1, -65525, 65543, 1, -65527, 65543, 1, -65529, 65543, 1, -65531, 65543, 1, -65533, 65543, 1, -65535, 65543, 1, -131072, 7, 0, -131070, 7, 0, -131068, 7, 0, -131066, 7, 0, -131064, 7, 0, -131062, 7, 0, -131060, 7, 0, -131058, 7, 0, -131056, 7, 0, -131055, 65543, 0, -131057, 65543, 0, -131059, 65543, 0, -131061, 65543, 0, -131063, 65543, 0, -131065, 65543, 0, -131067, 65543, 0, -131069, 65543, 0, -131071, 65543, 0, -1, 6, 0, 18, 6, 268435456, 65554, 6, 268435456, 196626, 6, 268435456, 262162, 6, 268435456, 327698, 6, 268435456, -65518, 6, 268435456, 131090, 6, 268435456, 0, 5, 0, 1, 65541, 0, 65536, 5, 1, 65537, 65541, 1, 2, 8, 0, 65538, 8, 1, 3, 65544, 0, 65539, 65544, 1, 4, 3, 0, 65540, 3, 1, 5, 65539, 0, 65541, 65539, 1, 6, 8, 0, 65542, 8, 1, 7, 65544, 0, 65543, 65544, 1, 8, 8, 0, 65544, 8, 1, 9, 65544, 0, 65545, 65544, 1, 10, 8, 0, 65546, 8, 1, 11, 65544, 0, 65547, 65544, 1, 12, 8, 0, 65548, 8, 1, 13, 65544, 0, 65549, 65544, 1, 14, 4, 0, 65550, 4, 1, 15, 65540, 0, 65551, 65540, 1, 16, 8, 0, 65552, 8, 1, 17, 65544, 0, 65553, 65544, 1, 131088, 8, 0, 196624, 8, 1, 131089, 65544, 0, 196625, 65544, 1, 262160, 8, 0, 327696, 8, 1, 262161, 65544, 0, 327697, 65544, 1, 262158, 5, 0, 327694, 5, 1, 262159, 65541, 0, 327695, 65541, 1, 131086, 8, 0, 196622, 8, 1, 131087, 65544, 0, 196623, 65544, 1, 131084, 8, 0, 196620, 8, 1, 131085, 65544, 0, 196621, 65544, 1, 131082, 8, 0, 196618, 8, 1, 131083, 65544, 0, 196619, 65544, 1, 131080, 3, 0, 196616, 3, 1, 131081, 65539, 0, 196617, 65539, 1, 131078, 8, 0, 196614, 8, 1, 131079, 65544, 0, 196615, 65544, 1, 131076, 8, 0, 196612, 8, 1, 131077, 65544, 0, 196613, 65544, 1, 131074, 8, 0, 196610, 8, 1, 131075, 65544, 0, 196611, 65544, 1, 131072, 8, 0, 196608, 8, 1, 131073, 65544, 0, 196609, 65544, 1, 262144, 3, 0, 327680, 3, 1, 262145, 65539, 0, 327681, 65539, 1, 262146, 4, 0, 327682, 4, 1, 262147, 65540, 0, 327683, 65540, 1, 262148, 8, 0, 327684, 8, 1, 262149, 65544, 0, 327685, 65544, 1, 262150, 8, 0, 327686, 8, 1, 262151, 65544, 0, 327687, 65544, 1, 262152, 8, 0, 327688, 8, 1, 262153, 65544, 0, 327689, 65544, 1, 262154, 8, 0, 327690, 8, 1, 262155, 65544, 0, 327691, 65544, 1, 262156, 8, 0, 327692, 8, 1, 262157, 65544, 0, 327693, 65544, 1, 393216, 8, 0, 458752, 8, 1, 393217, 65544, 0, 458753, 65544, 1, 393218, 8, 0, 458754, 8, 1, 393219, 65544, 0, 458755, 65544, 1, 393220, 8, 0, 458756, 8, 1, 393221, 65544, 0, 458757, 65544, 1, 393222, 4, 0, 458758, 4, 1, 393223, 65540, 0, 458759, 65540, 1, 393224, 8, 0, 458760, 8, 1, 393225, 65544, 0, 458761, 65544, 1, 393226, 8, 0, 458762, 8, 1, 393227, 65544, 0, 458763, 65544, 1, 393228, 3, 0, 458764, 3, 1, 393229, 65539, 0, 458765, 65539, 1, 393230, 8, 0, 458766, 8, 1, 393231, 65544, 0, 458767, 65544, 1, 393232, 8, 0, 458768, 8, 1, 393233, 65544, 0, 458769, 65544, 1, 458751, 6, 0, 524287, 6, 1, 458770, 6, 268435457, 393234, 6, 268435456)
@@ -907,7 +914,24 @@ position = Vector2(577, 102)
 shape = SubResource("WorldBoundaryShape2D_72o66")
 
 [node name="scrapPile" parent="." instance=ExtResource("16_nqd1i")]
+z_index = 1
+y_sort_enabled = true
 position = Vector2(158, 98)
 
 [node name="iceWall" parent="." instance=ExtResource("15_4cvvk")]
+z_index = 1
+y_sort_enabled = true
 position = Vector2(573, 103)
+
+[node name="ExitSign" type="Sprite2D" parent="."]
+position = Vector2(511, 109)
+texture = ExtResource("14_xymuy")
+
+[node name="Hand Crank" parent="." instance=ExtResource("15_dxgrc")]
+z_index = 1
+position = Vector2(237, 43)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_t0t1t")
+autoplay = true
+script = ExtResource("17_dawo8")

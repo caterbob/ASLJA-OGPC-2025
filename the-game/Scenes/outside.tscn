@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cxqnv0sevxfwm"]
+[gd_scene load_steps=9 format=3 uid="uid://bbj0eex5b780e"]
 
 [ext_resource type="Script" path="res://Scripts/outside.gd" id="1_mmuks"]
 [ext_resource type="Texture2D" uid="uid://dhmm7m1no1cqw" path="res://Sprites/Snow Tile 2.png" id="2_imhjl"]
 [ext_resource type="Texture2D" uid="uid://cv4yy7dpbspke" path="res://Sprites/Snow Tile.png" id="3_6xijo"]
+[ext_resource type="AudioStream" uid="uid://ckrtj21mrr85r" path="res://Sprites/Title Theme.mp3" id="4_i6pb3"]
+[ext_resource type="Script" path="res://Scenes/audio_stream_player.gd" id="5_eoyn2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h5e5p"]
 texture = ExtResource("2_imhjl")
@@ -26,3 +28,9 @@ script = ExtResource("1_mmuks")
 tile_set = SubResource("TileSet_lfw7y")
 format = 2
 layer_0/tile_data = PackedInt32Array(0, 0, 805306368, 65536, 1, 0, 65537, 0, 1342177280, 1, 0, 805306368, 2, 1, 0, 65538, 1, 0, 131072, 0, 805306368, 131073, 1, 0, 131074, 0, 0, 131075, 0, 1342177280, 65539, 1, 0, 3, 0, 1342177280, 4, 1, 0, 65540, 1, 0, 131076, 1, 0, 196612, 0, 0, 196611, 1, 0, 196610, 0, 805306368, 196609, 1, 0, 196608, 0, 1342177280, 196613, 0, 805306368, 131077, 1, 0, 65541, 1, 0, 5, 0, 0)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_i6pb3")
+script = ExtResource("5_eoyn2")
+
+[node name="Wind Turbine" type="StaticBody2D" parent="."]
