@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cxqnv0sevxfwm"]
 
-[ext_resource type="Script" path="res://Scenes/outside.gd" id="1_mmuks"]
+[ext_resource type="Script" path="res://Scripts/outside.gd" id="1_mmuks"]
 [ext_resource type="Texture2D" uid="uid://dhmm7m1no1cqw" path="res://Sprites/Snow Tile 2.png" id="2_imhjl"]
 [ext_resource type="Texture2D" uid="uid://cv4yy7dpbspke" path="res://Sprites/Snow Tile.png" id="3_6xijo"]
 

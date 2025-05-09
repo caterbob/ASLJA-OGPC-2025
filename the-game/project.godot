@@ -11,18 +11,20 @@ config_version=5
 [application]
 
 config/name="The Game"
-run/main_scene="res://Scenes/world.tscn"
+run/main_scene="res://title.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://Sprites/icon.svg"
 
 [autoload]
 
 Player="*res://Scenes/player.tscn"
+World="*res://Scenes/world.tscn"
+Outside="*res://Scenes/outside.tscn"
 
 [display]
 
-window/size/viewport_width=1560
-window/size/viewport_height=920
+window/size/viewport_width=1280
+window/size/viewport_height=960
 window/stretch/mode="canvas_items"
 window/stretch/scale=2.0
 window/stretch/scale_mode="integer"

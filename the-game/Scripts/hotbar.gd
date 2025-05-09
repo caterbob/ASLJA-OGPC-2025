@@ -2,6 +2,7 @@ extends Node2D
 var slots = []
 var selected = 1
 var Slot = preload("res://Scenes/inventory_slot.tscn")
+var type = "gear"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	for i in range(5):
@@ -14,13 +15,12 @@ func _ready() -> void:
 	slots[selected].scale = Vector2(1.2,1.2)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("interact"):
-		if slots[selected].full == false:
-			slots[selected].add_item()
+
+		
+
 
 	if Input.is_action_just_pressed("drop"):
-		if slots[selected].full:
-			slots[selected].remove_item()
+		drop()
 	if Input.is_action_just_pressed("scroll_up"):
 		if selected > 0:
 			selected -= 1
@@ -39,3 +39,24 @@ func _process(delta: float) -> void:
 			i.scale = Vector2(1,1)
 		slots[selected].scale = Vector2(1.2,1.2)
 		pass
+	
+func add(item) -> bool:
+
+
+	if slots[selected].full == false:
+		slots[selected].add_item(item)
+		slots[selected].full = true
+		return true
+	else:
+		for slot in slots:
+			if slot.full == false:
+				slot.add_item(item)
+				slot.full = true
+				return true
+	return false
+			
+	
+func drop() -> void:
+	if slots[selected].full:
+		slots[selected].remove_item()
+		slots[selected].full = false

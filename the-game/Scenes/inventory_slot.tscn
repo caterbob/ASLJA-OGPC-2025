@@ -7,6 +7,3 @@
 position = Vector2(16, 16)
 texture = ExtResource("1_3o6xk")
 script = ExtResource("2_kir43")
-
-[node name="item" type="Sprite2D" parent="."]
-scale = Vector2(0.210938, 0.210938)

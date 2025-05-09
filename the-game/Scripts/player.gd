@@ -5,7 +5,7 @@ var SPEED = 50.0
 
 @onready var animation = $AnimatedSprite2D
 
-var battery
+@onready var battery = get_node("/root/Player/HUD/Battery")
 	
 func _physics_process(delta: float) -> void:
 	pass
@@ -15,9 +15,15 @@ func _ready() -> void:
 	
 	get_tree().get_root().add_child(self)
 	self.owner = null
-	self.position = Vector2(300,100)
+	self.position = Vector2(0,0)
 	
-	battery = get_node("/root/World/Battery")
+	$HUD.visible = false
+	$HUD.set_process(false)
+	self.set_process(false)
+	self.visible = false
+
+	
+	
 
 
 	# Get the input direction and handle the movement/deceleration.
@@ -55,3 +61,7 @@ func _process(delta: float) -> void:
 		animation.stop()
 	
 	move_and_slide()
+
+func activate_hud():
+	$HUD.visible = true
+	$HUD.set_process(true)

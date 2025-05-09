@@ -2,7 +2,7 @@ extends Node2D
 @onready var gear = preload("res://Scenes/item.tscn")
 signal trigger()
 @onready var rng = RandomNumberGenerator.new()
-@onready var totalGears = 3
+@onready var totalGears = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
