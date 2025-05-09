@@ -7,6 +7,7 @@ var entered
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	animation.play("broken")
 	condition = "broken"
 	entered = false
 	$"Crank Interaction/Interact text".text = "Crank"
