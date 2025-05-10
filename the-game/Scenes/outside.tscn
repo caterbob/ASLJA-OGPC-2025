@@ -1,9 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://bbj0eex5b780e"]
+[gd_scene load_steps=11 format=3 uid="uid://bbj0eex5b780e"]
 
 [ext_resource type="Script" path="res://Scripts/outside.gd" id="1_mmuks"]
 [ext_resource type="Texture2D" uid="uid://dhmm7m1no1cqw" path="res://Sprites/Snow Tile 2.png" id="2_imhjl"]
 [ext_resource type="Texture2D" uid="uid://cv4yy7dpbspke" path="res://Sprites/Snow Tile.png" id="3_6xijo"]
-[ext_resource type="PackedScene" path="res://Scenes/garage_enterance.tscn" id="6_n77yi"]
+[ext_resource type="PackedScene" uid="uid://doh726q2lke5s" path="res://Scenes/transition.tscn" id="5_wq2su"]
+[ext_resource type="PackedScene" uid="uid://wnmsga16ryir" path="res://Scenes/wind_generator.tscn" id="6_h0i2r"]
+[ext_resource type="PackedScene" uid="uid://bo5a2kmg35g67" path="res://Scenes/garage_enterance.tscn" id="6_n77yi"]
+[ext_resource type="PackedScene" uid="uid://dljqgpc85a8kj" path="res://Scenes/radio_tower.tscn" id="7_dvrbf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h5e5p"]
 texture = ExtResource("2_imhjl")
@@ -33,4 +36,19 @@ layer_0/tile_data = PackedInt32Array(0, 0, 805306368, 65536, 1, 0, 65537, 0, 134
 [node name="Garage Enterance" parent="." instance=ExtResource("6_n77yi")]
 position = Vector2(32, 32)
 
+[node name="Transition" parent="." instance=ExtResource("5_wq2su")]
+
+[node name="snowSwitch" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="windGenerator" parent="." instance=ExtResource("6_h0i2r")]
+z_index = 2
+position = Vector2(134, 118)
+
+[node name="Radio Tower" parent="." instance=ExtResource("7_dvrbf")]
+position = Vector2(192, -40)
+
 [connection signal="enter" from="Garage Enterance" to="." method="_on_garage_enterance_enter"]
+[connection signal="swap" from="Transition" to="." method="_on_transition_swap"]
+[connection signal="timeout" from="snowSwitch" to="." method="_on_snow_switch_timeout"]

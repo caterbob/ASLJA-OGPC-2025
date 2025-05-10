@@ -2,6 +2,7 @@ extends Node2D
 @onready var inventory = get_node("/root/Player/HUD/hotbar")
 @onready var interaction = get_node("balls")
 var onGround = true
+var type = "gear"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	get_node("balls/Interact text").text = "Pick up"

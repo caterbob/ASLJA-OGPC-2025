@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dljqgpc85a8kj"]
+
+[ext_resource type="Script" path="res://Scenes/radio_tower.gd" id="1_a75qc"]
+[ext_resource type="Texture2D" uid="uid://c3iq2j46k0gxg" path="res://Sprites/rtower.png" id="1_iaqo1"]
+[ext_resource type="PackedScene" uid="uid://cf0icd87anad8" path="res://Scenes/interaction_field.tscn" id="2_dg030"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rh80o"]
+size = Vector2(58, 11)
+
+[node name="Radio Tower" type="Node2D"]
+script = ExtResource("1_a75qc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_iaqo1")
+
+[node name="Interaction field" parent="." instance=ExtResource("2_dg030")]
+position = Vector2(0, 53)
+scale = Vector2(4, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 53.5)
+shape = SubResource("RectangleShape2D_rh80o")
+
+[connection signal="trigger" from="Interaction field" to="." method="_on_interaction_field_trigger"]

@@ -1,5 +1,5 @@
 extends Node2D
-@onready var gear = preload("res://Scenes/item.tscn")
+@onready var gear = preload("res://Scenes/Items/gear.tscn")
 signal trigger()
 @onready var rng = RandomNumberGenerator.new()
 @onready var totalGears = 3

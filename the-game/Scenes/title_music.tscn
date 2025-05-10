@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://i5p02mla73rd"]
 
 [ext_resource type="AudioStream" uid="uid://ckrtj21mrr85r" path="res://Sprites/Title Theme.mp3" id="1_jqyew"]
-[ext_resource type="Script" path="res://Scenes/title_music.gd" id="2_0fbsg"]
+[ext_resource type="Script" path="res://Scripts/title_music.gd" id="2_0fbsg"]
 
 [node name="Title Music" type="AudioStreamPlayer"]
 stream = ExtResource("1_jqyew")

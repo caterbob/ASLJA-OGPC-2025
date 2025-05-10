@@ -16,7 +16,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	print(inventory.total_items)
+	#print(inventory.total_items)
 	if condition == "broken":
 		if inventory.total_items >= 4:
 			$"Crank Interaction/Interact text".text = "Fix"
@@ -25,8 +25,20 @@ func _process(delta: float) -> void:
 	elif condition == "fixed":
 		$"Crank Interaction/Interact text".text = "Crank"
 		
-	if Input.is_action_just_pressed("interact") and entered and condition == "broken" and inventory.total_items >= 4:
-		condition = "fixed"
+	if Input.is_action_just_pressed("interact") and entered and condition == "broken":
+		var gears = 0
+		var itemSlots = []
+		for i in inventory.slots:
+			if i.full:
+				if i.contained_item.type == "gear":
+					gears += 1
+					itemSlots.append(i)
+					if gears == 4:
+						condition = "fixed"
+						for slot in itemSlots:
+							slot.expend()
+						break
+		
 	# if hand crank is fixed, allow cranking and battery charging
 	if Input.is_action_pressed("interact") and entered and condition == "fixed":
 		animation.play("cranking")

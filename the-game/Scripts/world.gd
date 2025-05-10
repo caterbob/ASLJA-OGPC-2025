@@ -12,14 +12,17 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("space"):
-		switchToOutside()
+		$Transition.activate()
+	
 		
 		
 func switchToOutside():
 		self.position = Vector2(9999999999999999,0)
-		$"Title Theme".play()
-		$"Factory Theme".stop()
+		isFactory = false
+
 		var outside = get_node("/root/Outside")
+		var player = get_node("/root/Player")
+		player.lightOff()
 		outside.set_process(true)
 		outside.visible = true
 		for i in outside.get_children():
@@ -27,7 +30,14 @@ func switchToOutside():
 
 		for i in self.get_children():
 			i.set_process(false)
+		get_node("/root/Player").position = get_node("/root/Outside").get_node("Garage Enterance").position
 
 		self.visible = false
 		self.set_process(false)
 		outside.position = Vector2(0,0)
+		
+		
+func _on_transition_swap() -> void:
+	switchToOutside()
+
+	$Transition/AnimationPlayer.play_backwards("Transition")

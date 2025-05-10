@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://vqgf66u86nfx"]
+
+[ext_resource type="Script" path="res://Scenes/win_screen.gd" id="1_5b5ji"]
+
+[node name="win screen" type="CanvasLayer"]
+layer = 7
+script = ExtResource("1_5b5ji")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.619608, 0.796078, 1, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 208.0
+offset_top = 134.0
+offset_right = 406.0
+offset_bottom = 157.0
+text = "You successfully escaped!"

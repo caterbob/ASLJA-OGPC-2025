@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://bo5a2kmg35g67"]
 
-[ext_resource type="Script" path="res://garage_enterance.gd" id="1_b2iyf"]
+[ext_resource type="Script" path="res://Scripts/garage_enterance.gd" id="1_b2iyf"]
 [ext_resource type="Texture2D" uid="uid://ba1fvqkhwbnui" path="res://Sprites/Outside Scene-Sheet.png" id="2_0f2io"]
 [ext_resource type="PackedScene" uid="uid://cf0icd87anad8" path="res://Scenes/interaction_field.tscn" id="3_5tkab"]
 
@@ -91,7 +91,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vmuh0")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
 "speed": 20.0
 }]

@@ -21,7 +21,14 @@ func _on_interaction_field_trigger() -> void:
 	
 
 
-func _on_animated_sprite_2d_animation_looped() -> void:
+#func _on_animated_sprite_2d_animation_looped() -> void:
+	#$AnimatedSprite2D.stop()
+	#emit_signal("enter")
+	#get_node("/root/Player").set_process(true)
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	get_node("/root/Player").visible = false
 	$AnimatedSprite2D.stop()
 	emit_signal("enter")
 	get_node("/root/Player").set_process(true)

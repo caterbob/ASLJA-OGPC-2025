@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bo8ih5mxcxcl"]
+[gd_scene load_steps=31 format=3 uid="uid://bo8ih5mxcxcl"]
 
 [ext_resource type="Script" path="res://Scripts/world.gd" id="1_x48rk"]
 [ext_resource type="Texture2D" uid="uid://cu7k73nwbnjln" path="res://Sprites/Sprite-0001-export.png" id="2_k1oxr"]
@@ -10,11 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://deby3k7gwv44n" path="res://Sprites/WallSide.png" id="8_fnbo2"]
 [ext_resource type="Texture2D" uid="uid://daedaqjotti0" path="res://Sprites/Wall.png" id="9_0mfgb"]
 [ext_resource type="Texture2D" uid="uid://dsf251iqd81ym" path="res://Sprites/Floor Big.png" id="10_x1t46"]
-[ext_resource type="PackedScene" uid="uid://f35kg0gftxjh" path="res://Scenes/item.tscn" id="13_qnm4c"]
+[ext_resource type="PackedScene" uid="uid://f35kg0gftxjh" path="res://Scenes/Items/gear.tscn" id="13_qnm4c"]
 [ext_resource type="Texture2D" uid="uid://cynuly2k4cetl" path="res://Sprites/Exit Sign.png" id="14_xymuy"]
 [ext_resource type="PackedScene" uid="uid://dm4qj6buem0ig" path="res://Scenes/ice_wall.tscn" id="15_4cvvk"]
 [ext_resource type="PackedScene" uid="uid://ncthucxe4vn2" path="res://Scenes/hand_crank.tscn" id="15_dxgrc"]
 [ext_resource type="PackedScene" uid="uid://d1kmcj8utxo5a" path="res://Scenes/scrap_pile.tscn" id="16_nqd1i"]
+[ext_resource type="PackedScene" uid="uid://doh726q2lke5s" path="res://Scenes/transition.tscn" id="16_s8kyx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8dxh4"]
 texture = ExtResource("2_k1oxr")
@@ -928,3 +929,10 @@ texture = ExtResource("14_xymuy")
 [node name="Hand Crank" parent="." instance=ExtResource("15_dxgrc")]
 z_index = 1
 position = Vector2(237, 43)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.129558, 0.129558, 0.129558, 1)
+
+[node name="Transition" parent="." instance=ExtResource("16_s8kyx")]
+
+[connection signal="swap" from="Transition" to="." method="_on_transition_swap"]

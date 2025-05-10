@@ -52,17 +52,27 @@ func _process(delta: float) -> void:
 	#animation
 	if velocity.x > 0:
 		animation.play("walkRight")
+		$AnimatedSprite2D/shadow.position.y = 13
 	elif velocity.x < 0:
 		animation.play("walkLeft")
+		$AnimatedSprite2D/shadow.position.y = 13
 	elif velocity.y > 0:
 		animation.play("walkDown")
+		$AnimatedSprite2D/shadow.position.y = 13
 	elif velocity.y < 0:
 		animation.play("walkUp")
+		$AnimatedSprite2D/shadow.position.y = 12
 	else:
 		animation.stop()
+		
 	
 	move_and_slide()
 
 func activate_hud():
 	$HUD.visible = true
 	$HUD.set_process(true)
+
+func lightOff():
+	$PointLight2D.energy = 0
+func lightOn():
+	$PointLight2D.energy = 1

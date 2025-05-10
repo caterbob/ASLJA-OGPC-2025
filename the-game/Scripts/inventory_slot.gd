@@ -2,6 +2,7 @@ extends Sprite2D
 
 var full = false
 var contained_item = null
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -35,4 +36,10 @@ func remove_item() -> void:
 	#item.addConnection(interactionInstance)
 	print("I HATE YOU")
 	contained_item = null
+	full = false
+
+func expend():
+	var trash = contained_item
+	self.remove_child(contained_item)
+	trash.queue_free()
 	full = false

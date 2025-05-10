@@ -1,6 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://ncthucxe4vn2"]
+[gd_scene load_steps=17 format=3 uid="uid://ncthucxe4vn2"]
 
-[ext_resource type="Script" path="res://Scenes/hand_crank.gd" id="1_efbms"]
+[ext_resource type="Script" path="res://Scripts/hand_crank.gd" id="1_efbms"]
 [ext_resource type="Texture2D" uid="uid://d3u6fmmcvbgln" path="res://Sprites/Hand Crank Generator-Sheet.png" id="2_4agdj"]
 [ext_resource type="Texture2D" uid="uid://coy5gwdqugc75" path="res://Sprites/hand Crank BrokenSprite-0001.png" id="2_nocoj"]
 [ext_resource type="PackedScene" uid="uid://cf0icd87anad8" path="res://Scenes/interaction_field.tscn" id="3_k8gn2"]
@@ -79,7 +79,11 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_km8wa"]
-size = Vector2(18, 26)
+size = Vector2(18, 10)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_lq3vr"]
+cull_mode = 1
+polygon = PackedVector2Array(-13, 15, 5, 15, 5, -11, -13, -11)
 
 [node name="Hand Crank" type="StaticBody2D"]
 y_sort_enabled = true
@@ -94,8 +98,11 @@ position = Vector2(-4, 16)
 script = ExtResource("4_jk0mq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-4, 2)
+position = Vector2(-4, 10)
 shape = SubResource("RectangleShape2D_km8wa")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_lq3vr")
 
 [connection signal="got_entered" from="Crank Interaction" to="." method="_on_crank_interaction_got_entered"]
 [connection signal="got_exited" from="Crank Interaction" to="." method="_on_crank_interaction_got_exited"]
