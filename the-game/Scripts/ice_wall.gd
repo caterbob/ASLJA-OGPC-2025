@@ -14,8 +14,12 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if battery.batteryLevel < 50:
+		$"Interaction/Interact text".text = "Power?"
+	else:
+		$"Interaction/Interact text".text = "Melt"
 	if Input.is_action_just_pressed("interact") and $Interaction.entered:
-		if battery.batteryLevel > 50:
+		if battery.batteryLevel >= 50:
 			world.switchToOutside()
 			battery.deplete_battery(50)
 			player.position = Vector2(100, 100)
