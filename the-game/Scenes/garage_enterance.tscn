@@ -1,0 +1,120 @@
+[gd_scene load_steps=18 format=3 uid="uid://bo5a2kmg35g67"]
+
+[ext_resource type="Script" path="res://garage_enterance.gd" id="1_b2iyf"]
+[ext_resource type="Texture2D" uid="uid://ba1fvqkhwbnui" path="res://Sprites/Outside Scene-Sheet.png" id="2_0f2io"]
+[ext_resource type="PackedScene" uid="uid://cf0icd87anad8" path="res://Scenes/interaction_field.tscn" id="3_5tkab"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0itvt"]
+atlas = ExtResource("2_0f2io")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8o8tq"]
+atlas = ExtResource("2_0f2io")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2386q"]
+atlas = ExtResource("2_0f2io")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xkwgt"]
+atlas = ExtResource("2_0f2io")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vrrh"]
+atlas = ExtResource("2_0f2io")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8v0jn"]
+atlas = ExtResource("2_0f2io")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0o7to"]
+atlas = ExtResource("2_0f2io")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7lr2"]
+atlas = ExtResource("2_0f2io")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53bb8"]
+atlas = ExtResource("2_0f2io")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gf52s"]
+atlas = ExtResource("2_0f2io")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kn0ps"]
+atlas = ExtResource("2_0f2io")
+region = Rect2(640, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmuh0"]
+atlas = ExtResource("2_0f2io")
+region = Rect2(704, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k8gc6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0itvt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8o8tq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2386q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xkwgt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8vrrh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8v0jn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0o7to")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g7lr2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53bb8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gf52s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kn0ps")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vmuh0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mkirw"]
+size = Vector2(48, 24)
+
+[node name="Garage Enterance" type="Node2D"]
+script = ExtResource("1_b2iyf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_k8gc6")
+frame_progress = 0.875164
+
+[node name="Interaction field" parent="." instance=ExtResource("3_5tkab")]
+scale = Vector2(2, 2)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -13)
+shape = SubResource("RectangleShape2D_mkirw")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
+[connection signal="trigger" from="Interaction field" to="." method="_on_interaction_field_trigger"]

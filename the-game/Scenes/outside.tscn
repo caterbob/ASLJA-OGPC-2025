@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bbj0eex5b780e"]
+[gd_scene load_steps=8 format=3 uid="uid://bbj0eex5b780e"]
 
 [ext_resource type="Script" path="res://Scripts/outside.gd" id="1_mmuks"]
 [ext_resource type="Texture2D" uid="uid://dhmm7m1no1cqw" path="res://Sprites/Snow Tile 2.png" id="2_imhjl"]
 [ext_resource type="Texture2D" uid="uid://cv4yy7dpbspke" path="res://Sprites/Snow Tile.png" id="3_6xijo"]
+[ext_resource type="PackedScene" uid="uid://bo5a2kmg35g67" path="res://Scenes/garage_enterance.tscn" id="6_n77yi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h5e5p"]
 texture = ExtResource("2_imhjl")
@@ -26,3 +27,10 @@ script = ExtResource("1_mmuks")
 tile_set = SubResource("TileSet_lfw7y")
 format = 2
 layer_0/tile_data = PackedInt32Array(0, 0, 805306368, 65536, 1, 0, 65537, 0, 1342177280, 1, 0, 805306368, 2, 1, 0, 65538, 1, 0, 131072, 0, 805306368, 131073, 1, 0, 131074, 0, 0, 131075, 0, 1342177280, 65539, 1, 0, 3, 0, 1342177280, 4, 1, 0, 65540, 1, 0, 131076, 1, 0, 196612, 0, 0, 196611, 1, 0, 196610, 0, 805306368, 196609, 1, 0, 196608, 0, 1342177280, 196613, 0, 805306368, 131077, 1, 0, 65541, 1, 0, 5, 0, 0)
+
+[node name="Wind Turbine" type="StaticBody2D" parent="."]
+
+[node name="Garage Enterance" parent="." instance=ExtResource("6_n77yi")]
+position = Vector2(32, 32)
+
+[connection signal="enter" from="Garage Enterance" to="." method="_on_garage_enterance_enter"]
