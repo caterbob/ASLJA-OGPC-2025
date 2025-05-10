@@ -1,10 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bbj0eex5b780e"]
+[gd_scene load_steps=8 format=3 uid="uid://bbj0eex5b780e"]
 
 [ext_resource type="Script" path="res://Scripts/outside.gd" id="1_mmuks"]
 [ext_resource type="Texture2D" uid="uid://dhmm7m1no1cqw" path="res://Sprites/Snow Tile 2.png" id="2_imhjl"]
 [ext_resource type="Texture2D" uid="uid://cv4yy7dpbspke" path="res://Sprites/Snow Tile.png" id="3_6xijo"]
-[ext_resource type="AudioStream" uid="uid://ckrtj21mrr85r" path="res://Sprites/Title Theme.mp3" id="4_i6pb3"]
-[ext_resource type="Script" path="res://Scenes/audio_stream_player.gd" id="5_eoyn2"]
 [ext_resource type="PackedScene" uid="uid://bo5a2kmg35g67" path="res://Scenes/garage_enterance.tscn" id="6_n77yi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h5e5p"]

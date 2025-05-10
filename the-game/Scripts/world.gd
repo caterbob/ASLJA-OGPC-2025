@@ -17,7 +17,8 @@ func _process(delta: float) -> void:
 		
 func switchToOutside():
 		self.position = Vector2(9999999999999999,0)
-		$AudioStreamPlayer.stop()
+		$"Title Theme".play()
+		$"Factory Theme".stop()
 		var outside = get_node("/root/Outside")
 		outside.set_process(true)
 		outside.visible = true

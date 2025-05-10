@@ -23,6 +23,7 @@ func _on_button_pressed() -> void:
 	player.position = Vector2(220, 93)
 	player.visible = true
 	player.activate_hud()
+
 	self.visible = false
 	self.set_process(false)
 	var camera = get_node("/root/Player/Camera2D")

@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 		
 func switchToInside():
 	self.position = Vector2(9999999999999999,0)
-	$AudioStreamPlayer.stop()
+	get_node("/root/World/Title_Theme").play()
 	var garage = get_node("/root/World")
 	garage.set_process(true)
 	garage.visible = true

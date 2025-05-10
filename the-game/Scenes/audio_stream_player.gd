@@ -9,9 +9,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if world.isFactory:
-		self.play()
-		print("factory")
-	else:
-		self.stop()
-		print("Not factory")
+	pass
+	#if world.isFactory:
+	#	self.play()
+	#	print("factory")
+	#else:
+	#	self.stop()
+	#	print("Not factory")
