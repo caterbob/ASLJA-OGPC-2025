@@ -20,6 +20,8 @@ config/icon="res://Sprites/icon.svg"
 Player="*res://Scenes/player.tscn"
 World="*res://Scenes/world.tscn"
 Outside="*res://Scenes/outside.tscn"
+TitleMusic="*res://Scenes/title_music.tscn"
+FactoryMusic="*res://Scenes/factory_music.tscn"
 
 [display]
 

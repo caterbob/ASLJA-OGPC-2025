@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var animation = $"Crank Animation"
 @onready var battery = get_node("/root/Player/HUD/Battery")
+@onready var inventory = get_node("/root/Player/HUD/hotbar")
 var condition
 var entered
 
@@ -15,12 +16,16 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	print(inventory.total_items)
 	if condition == "broken":
-		$"Crank Interaction/Interact text".text = "Fix"
+		if inventory.total_items >= 4:
+			$"Crank Interaction/Interact text".text = "Fix"
+		else:
+			$"Crank Interaction/Interact text".text = "Gears?"
 	elif condition == "fixed":
 		$"Crank Interaction/Interact text".text = "Crank"
 		
-	if Input.is_action_just_pressed("interact") and entered and condition == "broken":
+	if Input.is_action_just_pressed("interact") and entered and condition == "broken" and inventory.total_items >= 4:
 		condition = "fixed"
 	# if hand crank is fixed, allow cranking and battery charging
 	if Input.is_action_pressed("interact") and entered and condition == "fixed":
@@ -28,16 +33,6 @@ func _process(delta: float) -> void:
 		battery.charge_battery(0.1)
 	else:
 		animation.stop()
-
-
-
-func _on_crank_interaction_trigger() -> void:
-	animation.play("cranking")
-
-
-func _on_crank_interaction_not_trigger() -> void:
-	animation.stop()
-
 
 func _on_crank_interaction_got_entered() -> void:
 	entered = true

@@ -17,7 +17,6 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("interact") and $Interaction.entered:
 		if battery.batteryLevel > 50:
 			world.switchToOutside()
-			world.isFactory = true
 			battery.deplete_battery(50)
 			player.position = Vector2(100, 100)
 		else:

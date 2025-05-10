@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bla52eo1igrfq"]
+
+[ext_resource type="AudioStream" uid="uid://0ohpoypahrkp" path="res://Sprites/Factory theme.mp3" id="1_cdw4m"]
+[ext_resource type="Script" path="res://Scenes/factory_music.gd" id="2_4ay4s"]
+
+[node name="Factory Music" type="AudioStreamPlayer"]
+stream = ExtResource("1_cdw4m")
+volume_db = 5.621
+script = ExtResource("2_4ay4s")
